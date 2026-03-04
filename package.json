@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,13 @@
   "devDependencies": {
     "@types/node": "^25.3.3",
     "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.2",
     "html-webpack-plugin": "5.5.0",
     "ts-loader": "9.2.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "webpack": "5.69.1",
-    "webpack-cli": "4.9.2"
+    "webpack": "^5.105.4",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
   }
 }
