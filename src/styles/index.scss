@@ -1,0 +1,25 @@
+@use "./reset.scss" as *;
+@use "./variables/globals" as *;
+@use "./themes/normal" as *;
+@use "./themes/dark" as *;
+
+.app {
+  font: var(--font-m);
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
+ 
+h1 {
+  font: var(--font-l);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+h2 {
+  font: var(--font-m);
+  font-weight: bold;
+  // color: var(--primary-color);
+}
