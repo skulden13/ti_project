@@ -9,7 +9,7 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
   console.log('cls', cls);
-console.log('cls.Navbar', cls.Navbar);
+  console.log('cls.Navbar', cls.Navbar);
 
   return (
     <div className={classNames(cls.navbar, {}, className ? [className] : [])}>
@@ -18,9 +18,9 @@ console.log('cls.Navbar', cls.Navbar);
           to="/"
           className={cls.mainLink}
           theme={AppLinkTheme.SECONDARY}
-          >
-            Main
-          </AppLink>
+        >
+          Main
+        </AppLink>
         <AppLink
           to="/about"
           theme={AppLinkTheme.SECONDARY}
@@ -29,5 +29,5 @@ console.log('cls.Navbar', cls.Navbar);
         </AppLink>
       </div>
     </div>
-  )
-}
+  );
+};

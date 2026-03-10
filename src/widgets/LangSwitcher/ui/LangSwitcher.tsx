@@ -14,7 +14,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
   const toggle = () => {
     i18n.changeLanguage(i18n.language === 'en' ? 'ua' : 'en');
-  }
+  };
 
   return (
     <Button

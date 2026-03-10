@@ -7,25 +7,25 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
-        "plugins": [
+        plugins: [
           [
-            "i18next-extract",
+            'i18next-extract',
             {
               locales: ['ua', 'en'],
-                keyAsDefaultValue: true
-            }
+              keyAsDefaultValue: true,
+            },
           ],
-        ]
-      }
-    }
+        ],
+      },
+    },
   };
-  
+
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack']
+    use: ['@svgr/webpack'],
   };
 
   const fileLoader = {
@@ -38,29 +38,29 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   };
 
   const typescriptLoader = {
-    // Use tsx is enought for using React 
+    // Use tsx is enought for using React
     test: /\.tsx?$/,
-    use: "ts-loader",
+    use: 'ts-loader',
     exclude: /node_modules/,
   };
 
   const cssModuleLoader = {
     test: /\.module\.s[ac]ss$/i,
     use: [
-      options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           esModule: false,
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
             localIdentName: options.isDev
-              ? "[path][name]__[local]"
-              : "[hash:base64:8]",
+              ? '[path][name]__[local]'
+              : '[hash:base64:8]',
           },
         },
       },
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
@@ -71,9 +71,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       // Creates `style` nodes from JS strings
       options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       // Translates CSS into CommonJS
-      "css-loader",
+      'css-loader',
       // Compiles Sass to CSS
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
