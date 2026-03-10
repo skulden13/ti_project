@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/skulden13/ti_project#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
     "@svgr/webpack": "^6.2.1",
     "@types/node": "^25.3.3",
@@ -29,6 +31,8 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.5",
     "@types/webpack-dev-server": "^4.7.2",
+    "babel-loader": "^10.1.1",
+    "babel-plugin-i18next-extract": "^1.1.0",
     "css-loader": "^7.1.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "5.5.0",
