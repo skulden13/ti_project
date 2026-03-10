@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/skulden13/ti_project#readme",
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
     "@svgr/webpack": "^6.2.1",
     "@types/node": "^25.3.3",
     "@types/react": "^17.0.39",
