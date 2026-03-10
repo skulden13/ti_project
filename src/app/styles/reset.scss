@@ -9,6 +9,7 @@ button,
 textarea,
 select {
   margin: 0;
+  border: none;
   font: inherit;
 }
 
@@ -16,12 +17,3 @@ h1, h2, h3, h4, h5, h6 {
   font:inherit;
   color: inherit;
 }
-
-// a {
-//   color: #fff;
-
-//   &,
-//   &:visited {
-//     color: inherit;
-//   }
-// }
