@@ -5,10 +5,8 @@
 
 .app {
   font: var(--font-m);
-
   background: var(--bg-color);
   color: var(--primary-color);
-
   min-height: 100vh;
 }
 
@@ -20,7 +18,7 @@
   flex-grow: 1;
   padding: 20px;
 }
- 
+
 h1 {
   font: var(--font-l);
   font-weight: bold;
@@ -30,5 +28,6 @@ h1 {
 h2 {
   font: var(--font-m);
   font-weight: bold;
+
   // color: var(--primary-color);
 }
