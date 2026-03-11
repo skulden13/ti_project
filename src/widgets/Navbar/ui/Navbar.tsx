@@ -9,9 +9,8 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-  console.log('cls', cls);
-  console.log('cls.Navbar', cls.Navbar);
-  const { t } = useTranslation();
+  const { t: t1 } = useTranslation('main');
+  const { t: t2 } = useTranslation('about');
 
   return (
     <div className={classNames(cls.navbar, {}, className ? [className] : [])}>
@@ -21,14 +20,14 @@ export const Navbar = ({ className }: NavbarProps) => {
           className={cls.mainLink}
           theme={AppLinkTheme.SECONDARY}
         >
-          {t('Main')}
+          {t1('Main')}
         </AppLink>
         <AppLink
           // eslint-disable-next-line
           to="/about"
           theme={AppLinkTheme.SECONDARY}
         >
-          {t('About')}
+          {t2('About')}
         </AppLink>
       </div>
     </div>
