@@ -2,7 +2,6 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-import path from 'path';
 
 module.exports = {
   // All imported modules in your tests should be mocked automatically
@@ -17,24 +16,24 @@ module.exports = {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   coveragePathIgnorePatterns: [
-    "/node_modules/"
+    '/node_modules/',
   ],
   moduleDirectories: [
-    "node_modules"
+    'node_modules',
   ],
   moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node"
+    'js',
+    'jsx',
+    'ts',
+    'tsx',
+    'json',
+    'node',
   ],
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   testMatch: [
-    "<rootDir>src/**/?(*.)+(spec|test).[tj]s?(x)"
+    '<rootDir>src/**/?(*.)+(spec|test).[tj]s?(x)',
   ],
-  rootDir: path.resolve(__dirname, '../../'),
+  rootDir: '../../',
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
@@ -143,7 +142,6 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
