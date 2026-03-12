@@ -1,4 +1,7 @@
 {
   "Language": "EN",
-  "Toggle": "Toggle"
+  "Toggle": "Toggle",
+  "ErrorHappened": "Some error happened!",
+  "ErrorPageRefresh": "Refresh",
+  "ErrorBtn": "Throw Error"
 }

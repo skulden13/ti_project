@@ -12,6 +12,7 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:css": "npx stylelint \"**/*.scss\"",
     "lint:css:fix": "npx stylelint \"**/*.scss\" --fix",
+    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix && npx stylelint \"**/*.scss\" --fix",
     "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "repository": {

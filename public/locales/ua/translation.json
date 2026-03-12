@@ -1,4 +1,7 @@
 {
   "Language": "UA",
-  "Toggle": "Переключити"
+  "Toggle": "Переключити",
+  "ErrorHappened": "Відбулася непередбачувана помилка!",
+  "ErrorPageRefresh": "Перезавантажити",
+  "ErrorBtn": "Кинути помилку"
 }
