@@ -2,7 +2,6 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-
 module.exports = {
   clearMocks: true,
   coveragePathIgnorePatterns: [
@@ -20,6 +19,7 @@ module.exports = {
     'node',
   ],
   moduleNameMapper: {
+    '^.+\\.svg$': '<rootDir>/config/jest/svgMock.tsx',
     '^shared/(.*)$': '<rootDir>/src/shared/$1',
     '^entities/(.*)$': '<rootDir>/src/entities/$1',
     '^features/(.*)$': '<rootDir>/src/features/$1',
