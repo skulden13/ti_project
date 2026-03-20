@@ -13,9 +13,12 @@
     "lint:css": "npx stylelint \"**/*.scss\"",
     "lint:css:fix": "npx stylelint \"**/*.scss\" --fix",
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix && npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "build-storybook": "build-storybook -c ./config/storybook",
+    "test:ui": "npm run build-storybook && node config/loki/run-loki-with-static-server.js test",
+    "test:ui:ok": "loki test approve",
+    "test:ui:update": "npm run build-storybook && node config/loki/run-loki-with-static-server.js update"
   },
   "repository": {
     "type": "git",
@@ -70,7 +73,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
-    "loki": "^0.28.1",
+    "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.5.3",
     "regenerator-runtime": "^0.14.1",
     "sass": "^1.49.9",
@@ -102,14 +105,16 @@
     "@types/minimatch": "5.1.2"
   },
   "loki": {
+    "reactUri": "http://127.0.0.1:6006",
+    "chromeFlags": "--headless --disable-gpu --hide-scrollbars",
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "width": 1366,
         "height": 768
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
       }
     }
