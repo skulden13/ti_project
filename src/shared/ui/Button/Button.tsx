@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib';
 
 import cls from './Button.module.scss';
@@ -19,8 +19,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   } = props;
 
   let classes = className ? [className] : [];
-  classes = theme ? classes.concat([theme]) : classes;
-
+  classes = theme ? classes.concat([cls[theme]]) : classes;
   return (
     <button
       type="button"
