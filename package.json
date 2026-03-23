@@ -15,7 +15,7 @@
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix && npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook",
+    "storybook:build": "build-storybook -c ./config/storybook",
     "test:ui": "npm run build-storybook && node config/loki/run-loki-with-static-server.js test",
     "test:ui:ok": "loki test approve",
     "test:ui:update": "npm run build-storybook && node config/loki/run-loki-with-static-server.js update"
