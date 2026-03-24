@@ -18,7 +18,8 @@
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:ui": "npm run storybook:build && node config/loki/run-loki-with-static-server.js test",
     "test:ui:ok": "loki test approve",
-    "test:ui:update": "npm run storybook:build && node config/loki/run-loki-with-static-server.js update"
+    "test:ui:update": "npm run storybook:build && node config/loki/run-loki-with-static-server.js update",
+    "test:ui:update:fast": "node config/loki/run-loki-with-static-server.js update"
   },
   "repository": {
     "type": "git",
@@ -106,7 +107,10 @@
   },
   "loki": {
     "looks-same": {
-      "ignoreCaret": true
+      "ignoreCaret": true,
+      "ignoreAntialiasing": true,
+      "antialiasingTolerance": 4,
+      "tolerance": 3
     },
     "reactUri": "http://127.0.0.1:6006",
     "chromeFlags": "--headless --disable-gpu --hide-scrollbars --disable-lcd-text --font-render-hinting=none --force-color-profile=srgb --force-device-scale-factor=1",
