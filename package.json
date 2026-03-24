@@ -109,7 +109,7 @@
       "ignoreCaret": true
     },
     "reactUri": "http://127.0.0.1:6006",
-    "chromeFlags": "--headless --disable-gpu --hide-scrollbars",
+    "chromeFlags": "--headless --disable-gpu --hide-scrollbars --disable-lcd-text --font-render-hinting=none --force-color-profile=srgb --force-device-scale-factor=1",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
