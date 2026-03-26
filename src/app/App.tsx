@@ -1,5 +1,3 @@
-import './styles/index.scss';
-
 import { classNames } from 'shared/lib';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
@@ -20,6 +18,7 @@ const App = () => {
           <AppRouter />
         </div>
       </Suspense>
+      <div id="modal-root" />
     </div>
   );
 };

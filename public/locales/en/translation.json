@@ -2,5 +2,6 @@
   "Language": "EN",
   "ErrorHappened": "Some error happened!",
   "ErrorPageRefresh": "Refresh",
-  "ErrorBtn": "Throw Error"
+  "ErrorBtn": "Throw Error",
+  "LogIn": "Log In"
 }

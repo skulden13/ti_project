@@ -4,13 +4,16 @@
 @use "./themes/normal" as *;
 @use "./themes/dark" as *;
 
-.app {
+body {
   font: var(--font-m);
-  background: var(--bg-color);
   color: var(--primary-color);
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  background: var(--bg-color);
+  min-height: 100vh;
 }
 
 .content-page {
