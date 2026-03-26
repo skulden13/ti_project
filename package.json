@@ -19,7 +19,10 @@
     "test:ui": "npm run storybook:build && node config/loki/run-loki-with-static-server.js test",
     "test:ui:ok": "loki test approve",
     "test:ui:update": "npm run storybook:build && node config/loki/run-loki-with-static-server.js update",
-    "test:ui:update:fast": "node config/loki/run-loki-with-static-server.js update"
+    "test:ui:update:fast": "node config/loki/run-loki-with-static-server.js update",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html"
   },
   "repository": {
     "type": "git",
@@ -76,6 +79,7 @@
     "jest-environment-jsdom": "^27.5.1",
     "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.5.3",
+    "reg-cli": "^0.18.14",
     "regenerator-runtime": "^0.14.1",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
