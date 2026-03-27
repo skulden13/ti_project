@@ -4,15 +4,11 @@
 @use "./themes/normal" as *;
 @use "./themes/dark" as *;
 
-.app,
-.app_modal {
+.app {
   font: var(--font-m);
   color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.app {
   background: var(--bg-color);
   min-height: 100vh;
 }
