@@ -4,7 +4,8 @@
 @use "./themes/normal" as *;
 @use "./themes/dark" as *;
 
-body {
+.app,
+.app_modal {
   font: var(--font-m);
   color: var(--primary-color);
   -webkit-font-smoothing: antialiased;

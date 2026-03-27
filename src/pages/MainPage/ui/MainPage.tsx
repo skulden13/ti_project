@@ -7,6 +7,7 @@ const MainPage = () => {
   return (
     <div>
       <h1>{t('MainPage')}</h1>
+      <p>{t('MainPage')}</p>
       <BugButton />
     </div>
   );
