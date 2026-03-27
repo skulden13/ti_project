@@ -3,5 +3,7 @@
   "ErrorHappened": "Відбулася непередбачувана помилка!",
   "ErrorPageRefresh": "Перезавантажити",
   "ErrorBtn": "Кинути помилку",
-  "LogIn": "Увійти"
+  "LogIn": "Увійти",
+  "Increment": "Інкремент",
+  "Decrement": "Декремент"
 }

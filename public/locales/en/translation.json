@@ -3,5 +3,7 @@
   "ErrorHappened": "Some error happened!",
   "ErrorPageRefresh": "Refresh",
   "ErrorBtn": "Throw Error",
-  "LogIn": "Log In"
+  "LogIn": "Log In",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }
