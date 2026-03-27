@@ -64,5 +64,11 @@ module.exports = {
                 'max-len': 'off',
             },
         },
+        {
+            files: ['**/src/**/*Slice.{ts,tsx}'],
+            rules: {
+                'no-param-reassign': 'off',
+            },
+        },
     ],
 };
