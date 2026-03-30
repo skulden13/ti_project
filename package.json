@@ -16,6 +16,8 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
+    "test": "npm run test:unit && npm run test:ui",
+    "test:f": "npm run test:unit && npm run test:ui:fast",
     "test:ui": "npm run storybook:build && node config/loki/run-loki-with-static-server.js test",
     "test:ui:fast": "node config/loki/run-loki-with-static-server.js test",
     "test:ui:ok": "loki test approve",
@@ -110,7 +112,8 @@
   },
   "overrides": {
     "@types/glob": "7.2.0",
-    "@types/minimatch": "5.1.2"
+    "@types/minimatch": "5.1.2",
+    "handlebars": "4.7.9"
   },
   "loki": {
     "looks-same": {
