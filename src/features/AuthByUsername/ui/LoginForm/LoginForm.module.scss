@@ -1,0 +1,23 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  min-width: 400px;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.input {
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.loginBtn {
+  margin-top: 10px;
+  margin-left: auto;
+}

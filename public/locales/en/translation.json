@@ -4,6 +4,8 @@
   "ErrorPageRefresh": "Refresh",
   "ErrorBtn": "Throw Error",
   "LogIn": "Log In",
+  "LoginName": "Enter Name >",
+  "LoginPassword": "Enter Password >",
   "Increment": "Increment",
   "Decrement": "Decrement"
 }

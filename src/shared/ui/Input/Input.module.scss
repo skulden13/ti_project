@@ -1,0 +1,55 @@
+.InputContainer {
+  display: flex;
+
+  // max-width: 300px;
+}
+
+.Placeholder {
+  margin-right: 5px;
+}
+
+.Input {
+  // border: 1px solid var(--primary-color);
+  outline: none;
+  width: 100%;
+
+  // color: var(--primary-color);
+  color: transparent;
+  text-shadow: 0 0 0 var(--primary-color);
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Caret_
+
+.CaretWrapper {
+  flex-grow: 1;
+  position: relative;
+}
+
+.Caret {
+  position: absolute;
+  height: 3px;
+  width: 9px;
+  background: var(--primary-color);
+  bottom: 0;
+  left: 0;
+  animation: blink 0.7s forwards infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
