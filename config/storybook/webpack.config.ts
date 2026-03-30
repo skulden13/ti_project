@@ -28,6 +28,19 @@ export default ({ config }: {config: webpack.Configuration}) => {
   });
   config.module.rules.push(buildCssLoader(true));
   config.plugins.push(
+    new webpack.NormalModuleReplacementPlugin(
+      /^(app|pages|widgets|features|entities|shared)\/(.*)$/,
+      (resource) => {
+        const [, layer, requestPath] = resource.request.match(
+          /^(app|pages|widgets|features|entities|shared)\/(.*)$/,
+        ) || [];
+
+        if (layer && requestPath) {
+          // eslint-disable-next-line no-param-reassign
+          resource.request = path.resolve(paths.src, layer, requestPath);
+        }
+      },
+    ),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
     }),
