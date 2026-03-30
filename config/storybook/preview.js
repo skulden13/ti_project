@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 
@@ -22,5 +23,6 @@ export const decorators = [
   ),
   StyleDecorator,
   ThemeDecorator(Theme.LIGHT),
+  StoreDecorator(),
   RouterDecorator,
 ];

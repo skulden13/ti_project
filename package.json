@@ -17,6 +17,7 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:ui": "npm run storybook:build && node config/loki/run-loki-with-static-server.js test",
+    "test:ui:fast": "node config/loki/run-loki-with-static-server.js test",
     "test:ui:ok": "loki test approve",
     "test:ui:update": "npm run storybook:build && node config/loki/run-loki-with-static-server.js update",
     "test:ui:update:fast": "node config/loki/run-loki-with-static-server.js update",
