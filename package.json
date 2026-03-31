@@ -13,6 +13,7 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
     "lint:css": "npx stylelint \"**/*.scss\"",
     "lint:css:fix": "npx stylelint \"**/*.scss\" --fix",
+    "lint": "npm run lint:ts && npm run lint:css",
     "lint:fix": "npm run lint:ts:fix && npm run lint:css:fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
@@ -26,7 +27,8 @@
     "test:ui:update:fast": "node config/loki/run-loki-with-static-server.js update",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "test:ui:report": "npm run test:ui:json && npm run test:ui:html"
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -99,7 +101,8 @@
     "webpack": "^5.69.1",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
