@@ -4,8 +4,10 @@
   "ErrorPageRefresh": "Refresh",
   "ErrorBtn": "Throw Error",
   "LogIn": "Log In",
+  "LogOut": "Log Out",
   "LoginName": "Enter Name >",
   "LoginPassword": "Enter Password >",
+  "LoginError": "Password or username is incorrect",
   "Increment": "Increment",
   "Decrement": "Decrement"
 }

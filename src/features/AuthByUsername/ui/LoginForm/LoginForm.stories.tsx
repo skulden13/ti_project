@@ -19,8 +19,14 @@ Primary.decorators = [StoreDecorator({
   loginForm: { username: '23', password: '1232' },
 })];
 
-// export const WithError = Template.bind({});
-// WithError.args = {};
-// WithError.decorators = [StoreDecorator({
-//   loginForm: { username: '23', password: '1232', error: 'Some error' },
-// })];
+export const WithError = Template.bind({});
+WithError.args = {};
+WithError.decorators = [StoreDecorator({
+  loginForm: { username: '23', password: '1232', error: 'Some error' },
+})];
+
+export const WithLoading = Template.bind({});
+WithLoading.args = {};
+WithLoading.decorators = [StoreDecorator({
+  loginForm: { isLoading: true },
+})];

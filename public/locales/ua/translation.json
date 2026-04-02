@@ -4,8 +4,10 @@
   "ErrorPageRefresh": "Перезавантажити",
   "ErrorBtn": "Кинути помилку",
   "LogIn": "Увійти",
+  "LogOut": "Вийти",
   "LoginName": "Введіть ім'я >",
   "LoginPassword": "Введіть пароль >",
+  "LoginError": "Пароль або ім'я невірне",
   "Increment": "Інкремент",
   "Decrement": "Декремент"
 }

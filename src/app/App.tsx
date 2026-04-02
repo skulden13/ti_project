@@ -3,15 +3,22 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 
 const App = () => {
   const { theme } = useTheme();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     document.body.className = theme;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
 
   return (
     <div className={classNames('app', {}, [])}>
