@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
@@ -10,10 +11,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
-  config.resolve.modules.push(paths.src);
-  config.resolve.extensions.push('.ts', '.tsx');
+  config.resolve = config.resolve || {};
+  config.resolve.modules = [paths.src, 'node_modules'];
+  config.resolve.extensions = [...(config.resolve.extensions || []), '.ts', '.tsx'];
 
-  // eslint-disable-next-line no-param-reassign
   config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i };
