@@ -1,4 +1,3 @@
-import React from 'react';
 import { classNames } from 'shared/lib';
 import { Loader } from 'shared/ui/Loader/Loader';
 
