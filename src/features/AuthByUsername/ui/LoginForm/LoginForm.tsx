@@ -6,9 +6,11 @@ import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
+import {
+  getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername,
+} from 'features/AuthByUsername/model/selectors';
 import cls from './LoginForm.module.scss';
 import { loginActions } from '../../model/slice/loginSlice';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 
 interface LoginFormProps {
@@ -18,10 +20,10 @@ interface LoginFormProps {
 export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const loginForm = useSelector(getLoginState);
-  const {
-    username, password, error, isLoading,
-  } = loginForm;
+  const username = useSelector(getLoginUsername);
+  const password = useSelector(getLoginPassword);
+  const isLoading = useSelector(getLoginIsLoading);
+  const error = useSelector(getLoginError);
 
   const changeUsernameHandler = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
