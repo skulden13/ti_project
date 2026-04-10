@@ -9,17 +9,24 @@ import { TextTheme, Text } from 'shared/ui/Text/Text';
 import {
   getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername,
 } from 'features/AuthByUsername/model/selectors';
+import { DynamicModuleLoader, ReducersList }
+  from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import cls from './LoginForm.module.scss';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const initialReducers: ReducersList = {
+  loginForm: loginReducer,
+};
+
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
@@ -38,34 +45,39 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   }, [dispatch, username, password]);
 
   return (
-    <div className={classNames(cls.LoginForm, {}, className ? [className] : [])}>
-      <h1>{t('LogIn')}</h1>
-      {error && <Text text={error} theme={TextTheme.ERROR} />}
-      <hr />
-      <Input
-        type="text"
-        className={cls.input}
-        placeholder={t('LoginName')}
-        autoFocus
-        value={username}
-        onChange={changeUsernameHandler}
-      />
-      <Input
-        type="text"
-        className={cls.input}
-        placeholder={t('LoginPassword')}
-        value={password}
-        onChange={changePasswordHandler}
-      />
-      <Button
-        type="submit"
-        className={cls.loginBtn}
-        theme={ButtonTheme.OUTLINE}
-        onClick={loginClickHandler}
-        disabled={isLoading}
-      >
-        {t('Login')}
-      </Button>
-    </div>
+    // eslint-disable-next-line i18next/no-literal-string
+    <DynamicModuleLoader reducers={initialReducers}>
+      <div className={classNames(cls.LoginForm, {}, className ? [className] : [])}>
+        <h1>{t('LogIn')}</h1>
+        {error && <Text text={error} theme={TextTheme.ERROR} />}
+        <hr />
+        <Input
+          type="text"
+          className={cls.input}
+          placeholder={t('LoginName')}
+          autoFocus
+          value={username}
+          onChange={changeUsernameHandler}
+        />
+        <Input
+          type="text"
+          className={cls.input}
+          placeholder={t('LoginPassword')}
+          value={password}
+          onChange={changePasswordHandler}
+        />
+        <Button
+          type="submit"
+          className={cls.loginBtn}
+          theme={ButtonTheme.OUTLINE}
+          onClick={loginClickHandler}
+          disabled={isLoading}
+        >
+          {t('Login')}
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   );
 });
+
+export default LoginForm;
