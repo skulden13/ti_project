@@ -18,6 +18,13 @@
     }
   ],
   "profile": {
-    "name": "Denys"
+    "firstname": "Denys",
+    "lastname": "Sk",
+    "age": 22,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Mykolayiv",
+    "username": "admin",
+    "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
   }
 }
