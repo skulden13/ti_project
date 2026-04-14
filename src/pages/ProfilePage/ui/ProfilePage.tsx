@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const ProfilePage = () => {
+const ProfilePage = memo(() => {
   const { t } = useTranslation('profile');
 
   return (
@@ -9,6 +10,6 @@ const ProfilePage = () => {
       <p>{t('ProfilePage')}</p>
     </div>
   );
-};
+});
 
 export default ProfilePage;
