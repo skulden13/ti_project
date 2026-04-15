@@ -6,6 +6,10 @@ Object.defineProperty(global, '__IS_DEV__', {
   value: true,
   writable: true,
 });
+Object.defineProperty(global, '__API__', {
+  value: true,
+  writable: true,
+});
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
