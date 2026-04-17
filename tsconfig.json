@@ -14,7 +14,8 @@
     },
     // use "import" for common.js modules 
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
   "ts-node": {
     "compilerOptions": {
