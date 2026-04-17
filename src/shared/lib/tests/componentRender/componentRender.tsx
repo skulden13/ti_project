@@ -12,18 +12,18 @@ export interface componentRenderOptions {
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
   const { route = '/', initialState = {} } = options;
   return render(
-    <StoreProvider initialState={initialState}>
-      <MemoryRouter
-        initialEntries={[route]}
-        future={{
-          v7_relativeSplatPath: true,
-          v7_startTransition: true,
-        }}
-      >
+    <MemoryRouter
+      initialEntries={[route]}
+      future={{
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      }}
+    >
+      <StoreProvider initialState={initialState}>
         <Suspense fallback="">
           {component}
         </Suspense>
-      </MemoryRouter>
-    </StoreProvider>,
+      </StoreProvider>
+    </MemoryRouter>,
   );
 }
