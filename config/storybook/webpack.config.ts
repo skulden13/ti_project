@@ -11,12 +11,20 @@ export default ({ config }: {config: webpack.Configuration}) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
+
   config.resolve = config.resolve || {};
+  config.module = config.module || { rules: [] };
+  config.module.rules = config.module.rules || [];
+  config.plugins = config.plugins || [];
   config.resolve.modules = [paths.src, 'node_modules'];
   config.resolve.extensions = [...(config.resolve.extensions || []), '.ts', '.tsx'];
 
-  config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
-    if (/svg/.test(rule.test as string)) {
+  config.module.rules = config.module.rules.map((rule) => {
+    if (!rule || typeof rule === 'string' || typeof rule === 'number') {
+      return rule;
+    }
+
+    if ('test' in rule && /svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i };
     }
 
