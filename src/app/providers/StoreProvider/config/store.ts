@@ -1,5 +1,11 @@
 import {
-  AnyAction, configureStore, getDefaultMiddleware, ReducersMapObject, ThunkDispatch,
+  AnyAction,
+  CombinedState,
+  configureStore,
+  getDefaultMiddleware,
+  Reducer,
+  ReducersMapObject,
+  ThunkDispatch,
 } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
@@ -27,8 +33,7 @@ function createReduxStore(
   };
 
   const store = configureStore({
-    // @ts-ignore
-    reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
