@@ -1,4 +1,11 @@
 {
   "ProfilePage": "Профіль",
-  "Profile": "Профіль"
+  "Profile": "Профіль",
+  "Edit": "Редагувати",
+  "Firstname": "Ім'я",
+  "Lastname": "Прізвище",
+  "Age": "Вік",
+  "Country": "Країна",
+  "City": "Місто",
+  "Username": "Ім'я користувача"
 }

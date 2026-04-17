@@ -35,7 +35,6 @@ function createReduxStore(
     }),
   });
 
-  // @ts-ignore TODO: fix
   store.reducerManager = reducerManager;
 
   return store;

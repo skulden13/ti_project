@@ -1,4 +1,11 @@
 {
   "ProfilePage": "Profile Page",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Firstname": "First Name",
+  "Lastname": "Last Name",
+  "Age": "Age",
+  "Country": "Country",
+  "City": "City",
+  "Username": "Username"
 }
