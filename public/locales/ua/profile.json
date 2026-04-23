@@ -2,10 +2,16 @@
   "ProfilePage": "Профіль",
   "Profile": "Профіль",
   "Edit": "Редагувати",
+  "Cancel": "Відмінити",
+  "Save": "Зберегти",
   "Firstname": "Ім'я",
   "Lastname": "Прізвище",
+  "Currency": "Валюта",
   "Age": "Вік",
   "Country": "Країна",
   "City": "Місто",
-  "Username": "Ім'я користувача"
+  "Username": "Ім'я користувача",
+  "Avatar": "Аватар",
+  "ProfileErrorTitle": "Помилка при завантаженні даних профілю",
+  "ProfileErrorText": "Спробуйте оновити сторінку"
 }

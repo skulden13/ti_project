@@ -1,0 +1,16 @@
+.ProfilePageHeader {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  margin-left: auto;
+}
+
+.button {
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

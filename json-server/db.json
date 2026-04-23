@@ -1,14 +1,42 @@
 {
   "$schema": "./node_modules/json-server/schema.json",
   "posts": [
-    { "id": "1", "title": "a title", "views": 100, "userId": "1" },
-    { "id": "2", "title": "another title", "views": 200, "userId": "1" },
-    { "id": "3", "title": "a title 2", "views": 100, "userId": "1" },
-    { "id": "4", "title": "another title 3", "views": 200, "userId": "1" }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100,
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200,
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "title": "a title 2",
+      "views": 100,
+      "userId": "1"
+    },
+    {
+      "id": "4",
+      "title": "another title 3",
+      "views": 200,
+      "userId": "1"
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -20,7 +48,7 @@
   "profile": {
     "firstname": "Denys",
     "lastname": "Sk",
-    "age": 22,
+    "age": 32,
     "currency": "UAH",
     "country": "Ukraine",
     "city": "Mykolayiv",

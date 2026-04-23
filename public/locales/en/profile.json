@@ -2,10 +2,16 @@
   "ProfilePage": "Profile Page",
   "Profile": "Profile",
   "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Save": "Save",
   "Firstname": "First Name",
   "Lastname": "Last Name",
   "Age": "Age",
+  "Currency": "Currency",
   "Country": "Country",
   "City": "City",
-  "Username": "Username"
+  "Username": "Username",
+  "Avatar": "Avatar",
+  "ProfileErrorTitle": "Some error happened during loading profile info",
+  "ProfileErrorText": "Refresh the page"
 }
