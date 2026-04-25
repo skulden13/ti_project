@@ -13,5 +13,10 @@
   "Username": "Username",
   "Avatar": "Avatar",
   "ProfileErrorTitle": "Some error happened during loading profile info",
-  "ProfileErrorText": "Refresh the page"
+  "ProfileErrorText": "Refresh the page",
+  "ProfileValidationIncorrectUserData": "First name and last name are required",
+  "ProfileValidationIncorrectAge": "Age is incorrect",
+  "ProfileValidationIncorrectCountry": "Country is incorrect",
+  "ProfileValidationNoData": "No data",
+  "ProfileValidationServerError": "Server error"
 }

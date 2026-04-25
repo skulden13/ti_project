@@ -13,5 +13,10 @@
   "Username": "Ім'я користувача",
   "Avatar": "Аватар",
   "ProfileErrorTitle": "Помилка при завантаженні даних профілю",
-  "ProfileErrorText": "Спробуйте оновити сторінку"
+  "ProfileErrorText": "Спробуйте оновити сторінку",
+  "ProfileValidationIncorrectUserData": "Ім'я або прізвище не задане",
+  "ProfileValidationIncorrectAge": "Вік некоректний",
+  "ProfileValidationIncorrectCountry": "Некоректна країна",
+  "ProfileValidationNoData": "Немає даних",
+  "ProfileValidationServerError": "Серверна помилка"
 }
