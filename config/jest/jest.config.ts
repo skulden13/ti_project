@@ -20,6 +20,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^.+\\.svg$': '<rootDir>/config/jest/svgMock.tsx',
+    '^.+\\.(png|jpg|jpeg|gif|webp)$': '<rootDir>/config/jest/fileMock.ts',
     '^shared/(.*)$': '<rootDir>/src/shared/$1',
     '^entities/(.*)$': '<rootDir>/src/entities/$1',
     '^features/(.*)$': '<rootDir>/src/features/$1',

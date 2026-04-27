@@ -49,7 +49,8 @@ const ProfilePage = memo(() => {
     if (!formData || __PROJECT__ !== ProjectTypeEnum.STORYBOOK) {
       dispatch(fetchProfileData());
     }
-  }, [dispatch, formData]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   const changeFirstnameHandler = useCallback((value: string) => {
     dispatch(profileActions.updateProfile({ firstname: value }));

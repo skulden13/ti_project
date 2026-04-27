@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import i18n from 'shared/config/i18n/i18n';
-import { Profile } from '../../model/types/profile';
+import { Profile, ValidationProfileError } from '../../model/types/profile';
 
 const fetchProfileData = createAsyncThunk<
   Profile,
@@ -14,10 +13,14 @@ const fetchProfileData = createAsyncThunk<
     try {
       const response = await extra.api.get<Profile>('/profile');
 
+      if (!response.data) {
+        throw new Error(ValidationProfileError.SERVER_ERROR);
+      }
+
       return response.data;
     } catch (e) {
       console.log(e);
-      return rejectWithValue(i18n.t('LoginError'));
+      return rejectWithValue(ValidationProfileError.SERVER_ERROR);
     }
   },
 );
