@@ -1,3 +1,5 @@
+import type { ProjectType } from '../../../src/shared/types/project';
+
 export type BuildMode = 'production' | 'development';
 
 export interface BuildPaths {
@@ -19,4 +21,5 @@ export interface BuildOptions {
   isDev: boolean;
   port: number;
   apiUrl: string;
+  project: ProjectType;
 }

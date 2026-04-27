@@ -21,6 +21,7 @@ import { Currency } from 'entities/Currency';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { ValidationProfileError } from 'entities/Profile/model/types/profile';
+import { ProjectTypeEnum } from 'shared/types/project';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -45,7 +46,7 @@ const ProfilePage = memo(() => {
   };
 
   useEffect(() => {
-    if (!formData) {
+    if (!formData || __PROJECT__ !== ProjectTypeEnum.STORYBOOK) {
       dispatch(fetchProfileData());
     }
   }, [dispatch, formData]);

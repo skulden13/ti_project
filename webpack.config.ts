@@ -2,6 +2,7 @@ import path from 'path';
 import * as webpack from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildEnv, BuildPaths } from './config/build/types/config';
+import { ProjectTypeEnum } from './src/shared/types/project';
 
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
@@ -22,6 +23,7 @@ export default (env: BuildEnv) => {
     isDev,
     port: PORT,
     apiUrl,
+    project: ProjectTypeEnum.FRONTEND,
   });
 
   return config;

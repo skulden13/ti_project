@@ -7,7 +7,12 @@ Object.defineProperty(global, '__IS_DEV__', {
   writable: true,
 });
 Object.defineProperty(global, '__API__', {
-  value: true,
+  value: '',
+  writable: true,
+});
+
+Object.defineProperty(global, '__PROJECT__', {
+  value: 'jest',
   writable: true,
 });
 
