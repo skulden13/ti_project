@@ -3,6 +3,7 @@
 @use "./variables/globals" as *;
 @use "./themes/normal" as *;
 @use "./themes/dark" as *;
+@use "./themes/orange" as *;
 
 .app {
   font: var(--font-m);
