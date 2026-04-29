@@ -3,13 +3,14 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions, getUserMounted } from 'entities/User';
 import { AppRouter } from './providers/router';
 
 const App = () => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
+  const mounted = useSelector(getUserMounted);
 
   useEffect(() => {
     document.body.className = theme;
@@ -27,7 +28,7 @@ const App = () => {
 
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {mounted && <AppRouter />}
         </div>
       </Suspense>
       <div id="modal-root" />
