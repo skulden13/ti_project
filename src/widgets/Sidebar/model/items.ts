@@ -3,11 +3,12 @@ import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';
-import i18n from 'shared/config/i18n/i18n';
+import ArticleIcon from 'shared/assets/icons/article-20-20.svg';
 
 export interface SidebarItemType {
   path: string;
   text: string;
+  ns: string;
   icon: VFC<SVGProps<SVGSVGElement>>;
   authOnly?: boolean;
 }
@@ -15,18 +16,28 @@ export interface SidebarItemType {
 export const SidebarItemsList: SidebarItemType[] = [
   {
     path: RoutePaths.main,
-    text: i18n.t('Main', { ns: 'main' }),
+    text: 'Main',
+    ns: 'main',
     icon: MainIcon,
   },
   {
     path: RoutePaths.about,
-    text: i18n.t('About', { ns: 'about' }),
+    text: 'About',
+    ns: 'about',
     icon: AboutIcon,
   },
   {
     path: RoutePaths.profile,
-    text: i18n.t('Profile', { ns: 'profile' }),
+    text: 'Profile',
+    ns: 'profile',
     icon: ProfileIcon,
+    authOnly: true,
+  },
+  {
+    path: RoutePaths.articles,
+    text: 'ArticlesPage',
+    ns: 'article',
+    icon: ArticleIcon,
     authOnly: true,
   },
 ];

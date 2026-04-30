@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 // const ProfilePageAsync = React.lazy(() => import('./ProflePage'));
 
@@ -7,4 +7,4 @@ const ProfilePageAsync = React.lazy(() => new Promise((resolve) => {
   setTimeout(() => resolve(import('./ProfilePage')), 1500);
 }));
 
-export default ProfilePageAsync;
+export default memo(ProfilePageAsync);

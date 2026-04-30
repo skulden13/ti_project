@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
+import { useTranslation } from 'react-i18next';
 import cls from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../model/items';
 
@@ -12,8 +13,11 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
-  const { path, icon: Icon, text } = item;
+  const {
+    path, icon: Icon, text, ns,
+  } = item;
   const isAuth = useSelector(getUserAuthData);
+  const { t } = useTranslation(ns);
 
   if (item.authOnly && !isAuth) {
     return null;
@@ -28,7 +32,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
       >
         <Icon className={cls.icon} />
         <span className={cls.text}>
-          {text}
+          {t(text)}
         </span>
       </AppLink>
     </div>

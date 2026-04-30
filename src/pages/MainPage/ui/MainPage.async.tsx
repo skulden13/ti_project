@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 // const MainPageAsync = React.lazy(() => import('./MainPage'));
 
@@ -7,4 +7,4 @@ const MainPageAsync = React.lazy(() => new Promise((resolve) => {
   setTimeout(() => resolve(import('./MainPage')), 1500);
 }));
 
-export default MainPageAsync;
+export default memo(MainPageAsync);
