@@ -1,4 +1,7 @@
 {
-  "ArticleDetailsPage": "Деталі статті",
-  "ArticlesPage": "Список статей"
+  "ArticleDetails": "Деталі статті",
+  "Articles": "Список статей",
+  "ArticleNotFound": "Стаття не знайдена",
+  "Loading": "Завантаження...",
+  "ErrorHeading": "Помилка при завантаженні статті"
 }

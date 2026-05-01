@@ -1,4 +1,7 @@
 {
-  "ArticleDetailsPage": "Article Details",
-  "ArticlesPage": "Articles"
+  "ArticleDetails": "Article Details",
+  "Articles": "Articles",
+  "ArticleNotFound": "Article was not found",
+  "Loading": "Loading...",
+  "ErrorHeading": "Error happened while loading an article"
 }

@@ -1,12 +1,23 @@
+import { ArticleDetails } from 'entities/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+import { classNames } from 'shared/lib';
+import cls from './ArticleDetailsPage.module.scss';
 
-const ArticleDetailsPage = memo(() => {
+interface ArticleDetailsPageProps {
+  className?: string;
+}
+
+const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article');
+  const { id } = useParams<{ id: string }>();
+
+  const content = !id ? t('ArticleNotFound') : <ArticleDetails id={id} />;
 
   return (
-    <div>
-      <h1>{t('ArticleDetailsPage')}</h1>
+    <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      {content}
     </div>
   );
 });
