@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, memo } from 'react';
+import { ButtonHTMLAttributes, memo } from 'react';
 import { classNames } from 'shared/lib';
 
 import { Mods } from 'shared/lib/classNames/classNames';
