@@ -4,6 +4,7 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import { useTranslation } from 'react-i18next';
+import { Icon } from 'shared/ui/Icon/Icon';
 import cls from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../model/items';
 
@@ -14,7 +15,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const {
-    path, icon: Icon, text, ns,
+    path, icon, text, ns,
   } = item;
   const isAuth = useSelector(getUserAuthData);
   const { t } = useTranslation(ns);
@@ -30,7 +31,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
         theme={AppLinkTheme.SECONDARY}
         className={cls.link}
       >
-        <Icon className={cls.icon} />
+        <Icon Svg={icon} className={cls.icon} />
         <span className={cls.text}>
           {t(text)}
         </span>
