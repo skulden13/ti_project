@@ -28,12 +28,12 @@ const text = 'export default {\n'
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: text,
+  text,
 };
 
 // Dark theme
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  children: text,
+  text,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
