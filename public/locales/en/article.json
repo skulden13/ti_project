@@ -3,5 +3,6 @@
   "Articles": "Articles",
   "ArticleNotFound": "Article was not found",
   "Loading": "Loading...",
-  "ErrorHeading": "Error happened while loading an article"
+  "ErrorHeading": "Error happened while loading an article",
+  "Copy": "Copy"
 }

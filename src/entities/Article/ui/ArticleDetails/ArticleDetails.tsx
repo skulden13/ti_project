@@ -4,15 +4,27 @@ import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList }
   from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import {
+  Text, TextAlign, TextSize, TextTheme,
+} from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { ProjectTypeEnum } from 'shared/types/project';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading }
   from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent }
+  from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -30,20 +42,53 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const data = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
 
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+    case ArticleBlockType.CODE:
+      return (
+        <ArticleCodeBlockComponent
+          key={block.id}
+          className={cls.block}
+          block={block}
+        />
+      );
+    case ArticleBlockType.IMAGE:
+      return (
+        <ArticleImageBlockComponent
+          key={block.id}
+          className={cls.block}
+          block={block}
+        />
+      );
+    case ArticleBlockType.TEXT:
+      return (
+        <ArticleTextBlockComponent
+          key={block.id}
+          className={cls.block}
+          block={block}
+        />
+      );
+    default:
+      return null;
+    }
+  }, []);
+
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (__PROJECT__ !== ProjectTypeEnum.STORYBOOK) {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   let content;
   if (isLoading) {
     content = (
-      <div>
+      <>
         <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
-      </div>
+      </>
     );
   } else if (error) {
     content = (
@@ -57,10 +102,26 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     );
   } else {
     content = (
-      // eslint-disable-next-line i18next/no-literal-string
-      <div>
-        Content
-      </div>
+      <>
+        <div className={cls.avatarWrapper}>
+          <Avatar className={cls.avatar} src={data?.img} size={200} />
+        </div>
+        <Text
+          className={cls.title}
+          title={data?.title}
+          text={data?.subtitle}
+          size={TextSize.L}
+        />
+        <div className={cls.articleInfo}>
+          <Icon Svg={EyeIcon} className={cls.icon} />
+          <Text text={String(data?.views)} />
+        </div>
+        <div className={cls.articleInfo}>
+          <Icon Svg={CalendarIcon} className={cls.icon} />
+          <Text text={data?.createdAt} />
+        </div>
+        {data?.blocks.map(renderBlock)}
+      </>
     );
   }
 
