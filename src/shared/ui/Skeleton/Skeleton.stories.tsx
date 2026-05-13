@@ -10,6 +10,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    loki: {
+      chromeSelector: '.SkeletonStory',
+    },
+  },
   decorators: [
     (Story) => (
       <div style={{ padding: 24, background: '#eee' }}>
@@ -19,7 +24,11 @@ export default {
   ],
 } as ComponentMeta<typeof Skeleton>;
 
-const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />;
+const Template: ComponentStory<typeof Skeleton> = (args) => (
+  <div className="SkeletonStory">
+    <Skeleton {...args} />
+  </div>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

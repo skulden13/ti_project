@@ -10,9 +10,18 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    loki: {
+      chromeSelector: '.CodeStory',
+    },
+  },
 } as ComponentMeta<typeof Code>;
 
-const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
+const Template: ComponentStory<typeof Code> = (args) => (
+  <div className="CodeStory">
+    <Code {...args} />
+  </div>
+);
 
 const text = 'export default {\n'
         + '    title: \'shared/Code\',\n'

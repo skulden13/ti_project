@@ -9,9 +9,18 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    loki: {
+      chromeSelector: '.ThemeSwitcherStory > *',
+    },
+  },
 } as ComponentMeta<typeof ThemeSwitcher>;
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
+const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
+  <div className="ThemeSwitcherStory">
+    <ThemeSwitcher {...args} />
+  </div>
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

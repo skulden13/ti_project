@@ -5,9 +5,18 @@ import { Avatar } from './Avatar';
 export default {
   title: 'shared/Avatar',
   component: Avatar,
+  parameters: {
+    loki: {
+      chromeSelector: '.AvatarStory',
+    },
+  },
 } as ComponentMeta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+const Template: ComponentStory<typeof Avatar> = (args) => (
+  <div className="AvatarStory">
+    <Avatar {...args} />
+  </div>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

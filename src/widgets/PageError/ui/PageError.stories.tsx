@@ -10,9 +10,18 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    loki: {
+      chromeSelector: '.PageErrorStory',
+    },
+  },
 } as ComponentMeta<typeof PageError>;
 
-const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args} />;
+const Template: ComponentStory<typeof PageError> = (args) => (
+  <div className="PageErrorStory">
+    <PageError {...args} />
+  </div>
+);
 
 export const Light = Template.bind({});
 Light.args = {};

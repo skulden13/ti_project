@@ -2,20 +2,36 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import ArticleImg from 'shared/assets/tests/storybook.jpeg';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
   title: 'pages/ArticleDetailsPage',
   component: ArticleDetailsPage,
+  parameters: {
+    router: {
+      route: '/articles/1',
+      path: '/articles/:id',
+    },
+    loki: {
+      chromeSelector: '.ArticleDetailsPageStory',
+      disableAutomaticViewportHeight: true,
+    },
+  },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = () => <ArticleDetailsPage />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = () => (
+  <div className="ArticleDetailsPageStory">
+    <ArticleDetailsPage />
+  </div>
+);
 
 const data: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: "What's new in JS for 2022 year?",
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: ArticleImg,
   views: 1022,
   createdAt: '26.02.2022',
   type: [ArticleType.IT],
@@ -47,67 +63,26 @@ const data: Article = {
     {
       id: '2',
       type: ArticleBlockType.IMAGE,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: ArticleImg,
       title: 'Figure 1 - website screenshot',
-    },
-    {
-      id: '3',
-      type: ArticleBlockType.CODE,
-      code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
-    },
-    {
-      id: '7',
-      type: ArticleBlockType.TEXT,
-      title: 'Block title',
-      paragraphs: [
-        'JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.',
-        'There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the "Try it Yourself" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:',
-      ],
-    },
-    {
-      id: '8',
-      type: ArticleBlockType.IMAGE,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-      title: 'Figure 1 - website screenshot',
-    },
-    {
-      id: '9',
-      type: ArticleBlockType.TEXT,
-      title: 'Block title',
-      paragraphs: [
-        'JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.',
-      ],
-    },
-    {
-      id: '10',
-      type: ArticleBlockType.TEXT,
-      title: 'Block title',
-      paragraphs: [
-        'JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.',
-        'There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the "Try it Yourself" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:',
-      ],
-    },
-    {
-      id: '11',
-      type: ArticleBlockType.IMAGE,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-      title: 'Figure 1 - website screenshot',
-    },
-    {
-      id: '12',
-      type: ArticleBlockType.TEXT,
-      title: 'Block title',
-      paragraphs: [
-        'JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.',
-        'There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the "Try it Yourself" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:',
-      ],
     },
   ],
 };
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({
+  articleDetails: {
+    data,
+  },
+})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    articleDetails: {
+      data,
+    },
+  })];

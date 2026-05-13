@@ -10,9 +10,18 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    loki: {
+      chromeSelector: '.ButtonStory',
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+  <div className="ButtonStory">
+    <Button {...args} />
+  </div>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
