@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList }
   from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
   Text, TextAlign, TextSize, TextTheme,
@@ -14,7 +14,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ProjectTypeEnum } from 'shared/types/project';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading }
   from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
@@ -73,11 +73,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (__PROJECT__ !== ProjectTypeEnum.STORYBOOK) {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
 
   let content;
   if (isLoading) {
