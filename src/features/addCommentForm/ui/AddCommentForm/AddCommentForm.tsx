@@ -50,7 +50,6 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
           type="text"
           className={cls.input}
           placeholder={t('EnterComment')}
-          autoFocus
           value={text}
           onChange={changeTextHandler}
         />
