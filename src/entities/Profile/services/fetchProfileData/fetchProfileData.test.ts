@@ -25,7 +25,7 @@ describe('fetchProfileData', () => {
   test('successful fetch', async () => {
     mockedAxios.get.mockReturnValue(Promise.resolve({ data }));
     const thunk = new TestAsyncThunk(fetchProfileData);
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(mockedAxios.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -35,7 +35,7 @@ describe('fetchProfileData', () => {
   test('failed fetch', async () => {
     mockedAxios.get.mockReturnValue(Promise.resolve({ error: ValidationProfileError.SERVER_ERROR }));
     const thunk = new TestAsyncThunk(fetchProfileData);
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(mockedAxios.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');

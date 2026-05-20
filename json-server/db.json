@@ -41,16 +41,30 @@
       "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
     }
   ],
-  "profile": {
-    "firstname": "Denys",
-    "lastname": "Sk",
-    "age": 33,
-    "currency": "UAH",
-    "country": "Ukraine",
-    "city": "Mykolayiv",
-    "username": "admin",
-    "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Denys",
+      "lastname": "Sk",
+      "age": 33,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Mykolayiv",
+      "username": "admin",
+      "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
+    },
+    {
+      "id": "2",
+      "firstname": "Dima",
+      "lastname": "K",
+      "age": 34,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "username": "deemaa",
+      "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -59,7 +73,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -157,13 +173,73 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "text": "lalalal",
+      "articleId": "1",
+      "userId": "1",
+      "id": "CPbiuE5"
+    },
+    {
+      "text": "yes (user)",
+      "articleId": "1",
+      "userId": "2",
+      "id": "4Iio1Sw"
+    },
+    {
+      "text": "fffffff",
+      "articleId": "1",
+      "userId": "2",
+      "id": "-Vt3uSG"
+    },
+    {
+      "text": "new comment",
+      "articleId": "1",
+      "userId": "2",
+      "id": "b8y2Vrl"
+    },
+    {
+      "text": "1111",
+      "articleId": "1",
+      "userId": "2",
+      "id": "Sg93EaJ"
+    },
+    {
+      "text": "aaaaAAA!!",
+      "articleId": "1",
+      "userId": "2",
+      "id": "1VQsyTr"
+    },
+    {
+      "text": "baby, one more time",
+      "articleId": "1",
+      "userId": "2",
+      "id": "LeuN1qX"
+    },
+    {
+      "text": "BBBB!!11",
+      "articleId": "1",
+      "userId": "2",
+      "id": "vF12blZ"
+    },
+    {
+      "text": "44444",
+      "articleId": "1",
+      "userId": "2",
+      "id": "oejs5st"
+    },
+    {
+      "text": "1 > time",
+      "articleId": "1",
+      "userId": "2",
+      "id": "vsjyW3-"
     }
   ]
 }

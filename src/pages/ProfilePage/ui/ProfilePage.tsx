@@ -10,7 +10,7 @@ import {
   profileReducer,
 } from 'entities/Profile';
 import {
-  memo, useCallback, useEffect,
+  memo, useCallback,
 } from 'react';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList }
@@ -21,7 +21,9 @@ import { Currency } from 'entities/Currency';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { ValidationProfileError } from 'entities/Profile/model/types/profile';
-import { ProjectTypeEnum } from 'shared/types/project';
+import { useInitialEffect }
+  from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -30,6 +32,7 @@ const reducers: ReducersList = {
 
 const ProfilePage = memo(() => {
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const error = useSelector(getProfileError);
@@ -45,12 +48,11 @@ const ProfilePage = memo(() => {
     [ValidationProfileError.SERVER_ERROR]: t('ProfileValidationServerError'),
   };
 
-  useEffect(() => {
-    if (!formData || __PROJECT__ !== ProjectTypeEnum.STORYBOOK) {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch]);
+  });
 
   const changeFirstnameHandler = useCallback((value: string) => {
     dispatch(profileActions.updateProfile({ firstname: value }));
