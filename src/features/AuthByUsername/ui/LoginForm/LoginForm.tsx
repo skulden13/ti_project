@@ -50,7 +50,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [dispatch, username, password, onSuccess]);
 
   return (
-    // eslint-disable-next-line i18next/no-literal-string
     <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, className ? [className] : [])}>
         <h1>{t('LogIn')}</h1>

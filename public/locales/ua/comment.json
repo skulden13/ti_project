@@ -1,4 +1,8 @@
 {
   "Comments": "Коментарі",
-  "CommentsNotFound": "Коментарів немає"
+  "CommentsNotFound": "Коментарів немає",
+  "AddComment": "Додати коментар",
+  "EnterComment": "Введіть свій коментар",
+  "AddCommentError": "Під час додавання коментаря сталася помилка",
+  "AddCommentNoData": "Немає даних"
 }

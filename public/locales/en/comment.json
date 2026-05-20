@@ -1,4 +1,8 @@
 {
   "Comments": "Comments",
-  "CommentsNotFound": "Comments not found"
+  "CommentsNotFound": "Comments not found",
+  "AddComment": "Add comment",
+  "EnterComment": "Enter your comment",
+  "AddCommentError": "An error happened during adding comment",
+  "AddCommentNoData": "No data"
 }

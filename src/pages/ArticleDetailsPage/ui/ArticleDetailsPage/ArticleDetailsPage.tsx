@@ -1,5 +1,5 @@
 import { ArticleDetails } from 'entities/Article';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib';
@@ -9,6 +9,8 @@ import { DynamicModuleLoader, ReducersList }
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { addCommentForArticle }
+  from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { articleDetailsCommentsReducer, getArticleComments }
   from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
@@ -34,12 +36,20 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     dispatch(fetchCommentsByArticleId(id));
   });
 
+  const sendCommentHandler = useCallback((text: string) => {
+    if (text) {
+      dispatch(addCommentForArticle(text));
+    }
+  }, [dispatch]);
+
   const content = !id ? t('ArticleNotFound') : (
     <>
       <ArticleDetails id={id} />
+
       <CommentList
         isLoading={isLoading}
         comments={comments}
+        onSendComment={sendCommentHandler}
       />
     </>
   );
