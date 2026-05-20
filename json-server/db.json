@@ -31,14 +31,14 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
+      "avatar": "/images/rick.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
+      "avatar": "/images/morty.jpg"
     }
   ],
   "profile": [
@@ -51,7 +51,7 @@
       "country": "Ukraine",
       "city": "Mykolayiv",
       "username": "admin",
-      "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
+      "avatar": "/images/rick.jpg"
     },
     {
       "id": "2",
@@ -62,7 +62,7 @@
       "country": "Ukraine",
       "city": "Kyiv",
       "username": "deemaa",
-      "avatar": "https://avatars.githubusercontent.com/u/6533742?v=4"
+      "avatar": "/images/morty.jpg"
     }
   ],
   "articles": [
