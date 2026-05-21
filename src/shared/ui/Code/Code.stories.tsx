@@ -12,7 +12,7 @@ export default {
   },
   parameters: {
     loki: {
-      chromeSelector: '.CodeStory',
+      chromeSelector: '.CodeStory > *',
     },
   },
 } as ComponentMeta<typeof Code>;

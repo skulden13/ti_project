@@ -1,8 +1,17 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta, DecoratorFn } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Skeleton } from './Skeleton';
+
+const StaticAnimationsDecorator: DecoratorFn = (Story) => (
+  <div className="static-animations">
+    <style>
+      {'.static-animations *::before { animation: none !important; }'}
+    </style>
+    <Story />
+  </div>
+);
 
 export default {
   title: 'shared/Skeleton',
@@ -16,6 +25,7 @@ export default {
     },
   },
   decorators: [
+    StaticAnimationsDecorator,
     (Story) => (
       <div style={{ padding: 24, background: '#eee' }}>
         <Story />
