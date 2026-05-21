@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, Suspense } from 'react';
 import { classNames } from 'shared/lib';
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +25,9 @@ export const CommentList = memo((props: CommentListProps) => {
     <div className={classNames(cls.CommentList, {}, [className])}>
       <Text className={cls.title} title={t('Comments')} />
 
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback="">
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
 
       {comments?.length
         ? comments?.map((comment) => (
