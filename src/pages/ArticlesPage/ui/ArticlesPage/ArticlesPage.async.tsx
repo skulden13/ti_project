@@ -1,10 +1,5 @@
 import React, { memo } from 'react';
 
-// const ArticlesPageAsync = React.lazy(() => import('./ArticlesPage'));
-
-const ArticlesPageAsync = React.lazy(() => new Promise((resolve) => {
-  // @ts-ignore
-  setTimeout(() => resolve(import('./ArticlesPage')), 1500);
-}));
+const ArticlesPageAsync = React.lazy(() => import('./ArticlesPage'));
 
 export default memo(ArticlesPageAsync);
