@@ -4,7 +4,7 @@ import AvatarImg from 'shared/assets/tests/storybook.jpeg';
 import { CommentCard } from './CommentCard';
 
 export default {
-  title: 'enteties/CommentCard',
+  title: 'enteties/Comment/CommentCard',
   component: CommentCard,
   argTypes: {},
   parameters: {
@@ -15,7 +15,7 @@ export default {
 } as ComponentMeta<typeof CommentCard>;
 
 const Template: ComponentStory<typeof CommentCard> = (args) => (
-  <div className="CommentCardStory">
+  <div className="CommentCardStory" style={{ minWidth: 300, minHeight: 1 }}>
     <CommentCard {...args} />
   </div>
 );
@@ -42,6 +42,11 @@ const comment = {
 export const Primary = Template.bind({});
 Primary.args = {
   comment,
+};
+
+export const Empty = Template.bind({});
+Empty.args = {
+  comment: undefined,
 };
 
 export const WithLoading = Template.bind({});

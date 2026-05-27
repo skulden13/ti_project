@@ -4,7 +4,7 @@ import AvatarImg from 'shared/assets/tests/storybook.jpeg';
 import { CommentList } from './CommentList';
 
 export default {
-  title: 'enteties/CommentList',
+  title: 'enteties/Comment/CommentList',
   component: CommentList,
   argTypes: {},
   parameters: {
