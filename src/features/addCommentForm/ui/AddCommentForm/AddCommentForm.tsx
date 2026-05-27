@@ -45,11 +45,11 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames(cls.AddCommentForm, {}, className ? [className] : [])}>
-        {error && <Text text={error} theme={TextTheme.ERROR} />}
+        {error && <Text text={error} theme={TextTheme.ERROR} className={cls.error} />}
         <Input
           type="text"
           className={cls.input}
-          placeholder={t('EnterComment')}
+          placeholder={`${t('EnterComment')}:`}
           value={text}
           onChange={changeTextHandler}
         />
