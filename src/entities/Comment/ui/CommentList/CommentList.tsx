@@ -21,6 +21,16 @@ export const CommentList = memo((props: CommentListProps) => {
     className, comments, isLoading, onSendComment,
   } = props;
 
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.CommentList, {}, [className])}>
+        <CommentCard isLoading />
+        <CommentCard isLoading />
+        <CommentCard isLoading />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(cls.CommentList, {}, [className])}>
       <Text className={cls.title} title={t('Comments')} />
