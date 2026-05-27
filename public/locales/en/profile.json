@@ -18,5 +18,6 @@
   "ProfileValidationIncorrectAge": "Age is incorrect",
   "ProfileValidationIncorrectCountry": "Country is incorrect",
   "ProfileValidationNoData": "No data",
-  "ProfileValidationServerError": "Server error"
+  "ProfileValidationServerError": "Server error",
+  "ProfileIdMissingError": "Id field wasn't provided for profile"
 }

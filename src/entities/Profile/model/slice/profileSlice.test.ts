@@ -6,6 +6,7 @@ import { profileActions, profileReducer } from './profileSlice';
 import { ProfileSchema, ValidationProfileError } from '../types/profile';
 
 const data = {
+  id: '1',
   firstname: 'First',
   lastname: 'Last',
   age: 22,
@@ -73,6 +74,25 @@ describe('profileSlice', () => {
     )).toEqual({
       isLoading: true,
       validationErrors: undefined,
+    });
+  });
+
+  test('test update profile service rejected', () => {
+    const state: DeepPartial<ProfileSchema> = {
+      isLoading: true,
+    };
+
+    expect(profileReducer(
+      state as ProfileSchema,
+      updateProfileData.rejected(
+        null,
+        '',
+        undefined,
+        [ValidationProfileError.SERVER_ERROR],
+      ),
+    )).toEqual({
+      isLoading: false,
+      validationErrors: [ValidationProfileError.SERVER_ERROR],
     });
   });
 

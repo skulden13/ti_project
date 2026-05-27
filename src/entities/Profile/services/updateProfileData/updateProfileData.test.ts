@@ -11,6 +11,7 @@ jest.mock('axios');
 const mockedAxios = jest.mocked(axios, true);
 
 const data = {
+  id: '1',
   firstname: 'First',
   lastname: 'Last',
   age: 22,

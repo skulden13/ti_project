@@ -18,5 +18,6 @@
   "ProfileValidationIncorrectAge": "Вік некоректний",
   "ProfileValidationIncorrectCountry": "Некоректна країна",
   "ProfileValidationNoData": "Немає даних",
-  "ProfileValidationServerError": "Серверна помилка"
+  "ProfileValidationServerError": "Серверна помилка",
+  "ProfileIdMissingError": "Поле Id не було передане для оновоення профілю"
 }
