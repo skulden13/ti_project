@@ -1,7 +1,7 @@
 import { ArticleDetails } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList }
@@ -9,6 +9,8 @@ import { DynamicModuleLoader, ReducersList }
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import { addCommentForArticle }
   from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { articleDetailsCommentsReducer, getArticleComments }
@@ -29,6 +31,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article');
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
 
@@ -42,8 +45,23 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     }
   }, [dispatch]);
 
+  const handleBackBtnClick = useCallback(
+    () => {
+      navigate(RoutePaths.articles);
+    },
+    [navigate],
+  );
+
   const content = !id ? t('ArticleNotFound') : (
     <>
+      <Button
+        theme={ButtonTheme.OUTLINE}
+        onClick={handleBackBtnClick}
+        className={cls.backBtn}
+      >
+        {t('Back')}
+      </Button>
+
       <ArticleDetails id={id} />
 
       <CommentList
