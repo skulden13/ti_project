@@ -23,6 +23,7 @@ const Template: ComponentStory<typeof ArticleDetails> = (args) => (
 
 const data: Article = {
   id: '1',
+  user: { id: '1', username: 'admin' },
   title: 'Javascript news',
   subtitle: "What's new in JS for 2022 year?",
   img: ArticleImg,

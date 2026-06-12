@@ -68,6 +68,7 @@
   "articles": [
     {
       "id": "1",
+      "userId": "1",
       "title": "Javascript news",
       "subtitle": "What's new in JS for 2022 year?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",

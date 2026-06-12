@@ -23,6 +23,7 @@ describe('articleDetailsSlice', () => {
   test('test article details service fulfilled', () => {
     const data = {
       id: '1',
+      user: { id: '1', username: 'admin' },
       title: 'title',
       subtitle: 'subtitle',
       img: 'img',
