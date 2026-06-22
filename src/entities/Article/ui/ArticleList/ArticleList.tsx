@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib';
-import { useTranslation } from 'react-i18next';
 import { Article, ArticleView } from '../../model/types/article';
 
 import cls from './ArticleList.module.scss';
@@ -22,7 +21,6 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.PLATE
   ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { t } = useTranslation();
   const {
     className, articles, isLoading, view = ArticleView.PLATE,
   } = props;
