@@ -10,6 +10,7 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -17,6 +18,7 @@ export interface StateSchema {
   // Async
   loginForm?: LoginSchema,
   profile?: ProfileSchema,
+  articlesPage?: ArticlesPageSchema,
   articleDetails?: AtricleDetailsSchema,
   articleDetailsComments?: ArticleDetailsCommentsSchema,
   addCommentForm?: AddCommentFormSchema,
