@@ -7,6 +7,7 @@ import { useInitialEffect }
   from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Page } from 'shared/ui/Page/Page';
 import { articlesPageActions, articlesPageReducer, getArticles }
   from '../../model/slice/articlesPageSlice';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
@@ -34,13 +35,13 @@ const ArticlesPage = memo(() => {
   );
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(fetchArticlesList({ page: 1 }));
   });
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div>
+      <Page>
         <header className={cls.header}>
           <h1>{t('ArticlesPage')}</h1>
           <ArticleViewSelector view={view} onViewClick={handleChangeView} />
@@ -51,7 +52,7 @@ const ArticlesPage = memo(() => {
           isLoading={isLoading}
           // error={error}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });

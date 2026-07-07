@@ -8,6 +8,7 @@ import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
 
 export type AppRouteProps = RouteProps & {
   authOnly?: boolean;
+  element: JSX.Element;
 }
 
 export enum AppRoutes {
