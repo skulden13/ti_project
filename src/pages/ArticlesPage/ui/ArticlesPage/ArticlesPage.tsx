@@ -13,6 +13,7 @@ import { articlesPageActions, articlesPageReducer, getArticles }
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlePageError,
+  getArticlePageInited,
   getArticlePageIsLoading,
   getArticlePageView,
 }
@@ -32,6 +33,7 @@ const ArticlesPage = memo(() => {
   const isLoading = useSelector(getArticlePageIsLoading);
   const error = useSelector(getArticlePageError);
   const view = useSelector(getArticlePageView) || ArticleView.PLATE;
+  const inited = useSelector(getArticlePageInited);
 
   const handleChangeView = useCallback(
     (v: ArticleView) => { dispatch(articlesPageActions.setView(v)); },
@@ -44,12 +46,14 @@ const ArticlesPage = memo(() => {
   );
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    if (!inited) {
+      dispatch(articlesPageActions.initState());
+      dispatch(fetchArticlesList({ page: 1 }));
+    }
   });
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={loadNextHandler}>
         <header className={cls.header}>
           <h1>{t('ArticlesPage')}</h1>

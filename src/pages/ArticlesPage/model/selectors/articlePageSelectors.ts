@@ -13,6 +13,8 @@ const getArticlePageLimit = (state: StateSchema) => state.articlesPage?.limit ||
 
 const getArticlePageHasMore = (state: StateSchema) => state.articlesPage?.hasMore;
 
+const getArticlePageInited = (state: StateSchema) => state.articlesPage?._inited;
+
 export {
   getArticlePageIsLoading,
   getArticlePageError,
@@ -20,4 +22,5 @@ export {
   getArticlePageNum,
   getArticlePageLimit,
   getArticlePageHasMore,
+  getArticlePageInited,
 };
