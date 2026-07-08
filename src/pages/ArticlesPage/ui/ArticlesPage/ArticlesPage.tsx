@@ -10,10 +10,8 @@ import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
 import { articlesPageActions, articlesPageReducer, getArticles }
   from '../../model/slice/articlesPageSlice';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlePageError,
-  getArticlePageInited,
   getArticlePageIsLoading,
   getArticlePageView,
 }
@@ -21,6 +19,7 @@ import {
 import cls from './ArticlesPage.module.scss';
 import { fetchNextArticlesPage }
   from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -33,7 +32,6 @@ const ArticlesPage = memo(() => {
   const isLoading = useSelector(getArticlePageIsLoading);
   const error = useSelector(getArticlePageError);
   const view = useSelector(getArticlePageView) || ArticleView.PLATE;
-  const inited = useSelector(getArticlePageInited);
 
   const handleChangeView = useCallback(
     (v: ArticleView) => { dispatch(articlesPageActions.setView(v)); },
@@ -45,12 +43,7 @@ const ArticlesPage = memo(() => {
     [dispatch],
   );
 
-  useInitialEffect(() => {
-    if (!inited) {
-      dispatch(articlesPageActions.initState());
-      dispatch(fetchArticlesList({ page: 1 }));
-    }
-  });
+  useInitialEffect(() => { dispatch(initArticlesPage()); });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
