@@ -4,6 +4,7 @@
   "ArticleNotFound": "Article was not found",
   "Loading": "Loading...",
   "ErrorHeading": "Error happened while loading an article",
+  "ErrorHeadingArticleList": "Error happened while loading an article list",
   "Copy": "Copy",
   "ReadMore": "Read more",
   "Back": "Back to article list"

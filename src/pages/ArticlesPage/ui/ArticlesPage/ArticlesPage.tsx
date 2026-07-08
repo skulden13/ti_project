@@ -59,7 +59,7 @@ const ArticlesPage = memo(() => {
           articles={articles}
           view={view}
           isLoading={isLoading}
-          // error={error}
+          error={error}
         />
       </Page>
     </DynamicModuleLoader>

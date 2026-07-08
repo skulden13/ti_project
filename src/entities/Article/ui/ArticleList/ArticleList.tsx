@@ -1,5 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib';
+import { useTranslation } from 'react-i18next';
+import { TextTheme, Text, TextAlign } from 'shared/ui/Text/Text';
 import { Article, ArticleView } from '../../model/types/article';
 
 import cls from './ArticleList.module.scss';
@@ -11,6 +13,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  error?: string;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.PLATE ? 9 : 3)
@@ -21,8 +24,9 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.PLATE
   ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
+  const { t } = useTranslation('article');
   const {
-    className, articles, isLoading, view = ArticleView.PLATE,
+    className, articles, isLoading, view = ArticleView.PLATE, error,
   } = props;
 
   const renderArticle = (item: Article) => (
@@ -34,12 +38,29 @@ export const ArticleList = memo((props: ArticleListProps) => {
     />
   );
 
-  return (
-    <div className={classNames('', {}, [className, cls[view]])}>
+  let content = (
+    <>
       {articles.length > 0
         ? articles.map(renderArticle)
         : null}
       {isLoading && getSkeletons(view)}
+    </>
+  );
+
+  if (error) {
+    content = (
+      <Text
+        className={cls.heading}
+        theme={TextTheme.ERROR}
+        title={t('ErrorHeadingArticleList')}
+        align={TextAlign.CENTER}
+      />
+    );
+  }
+
+  return (
+    <div className={classNames('', {}, [className, cls[view]])}>
+      {content}
     </div>
   );
 });
