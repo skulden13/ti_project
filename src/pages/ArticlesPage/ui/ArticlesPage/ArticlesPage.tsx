@@ -13,13 +13,13 @@ import { articlesPageActions, articlesPageReducer, getArticles }
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlePageError,
-  getArticlePageHasMore,
   getArticlePageIsLoading,
-  getArticlePageNum,
   getArticlePageView,
 }
   from '../../model/selectors/articlePageSelectors';
 import cls from './ArticlesPage.module.scss';
+import { fetchNextArticlesPage }
+  from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -32,25 +32,15 @@ const ArticlesPage = memo(() => {
   const isLoading = useSelector(getArticlePageIsLoading);
   const error = useSelector(getArticlePageError);
   const view = useSelector(getArticlePageView) || ArticleView.PLATE;
-  const page = useSelector(getArticlePageNum);
-  const hasMore = useSelector(getArticlePageHasMore);
 
   const handleChangeView = useCallback(
-    (v: ArticleView) => {
-      dispatch(articlesPageActions.setView(v));
-    },
+    (v: ArticleView) => { dispatch(articlesPageActions.setView(v)); },
     [dispatch],
   );
 
   const loadNextHandler = useCallback(
-    () => {
-      if (hasMore && !isLoading) {
-        const nextPage = page + 1;
-        dispatch(articlesPageActions.setPage(nextPage));
-        dispatch(fetchArticlesList({ page: nextPage }));
-      }
-    },
-    [dispatch, page, hasMore, isLoading],
+    () => { dispatch(fetchNextArticlesPage()); },
+    [dispatch],
   );
 
   useInitialEffect(() => {
