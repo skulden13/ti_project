@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom';
 import 'regenerator-runtime/runtime';
 
-// eslint-ignore-next-line
 Object.defineProperty(global, '__IS_DEV__', {
   value: true,
   writable: true,
