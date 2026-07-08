@@ -2,7 +2,6 @@ import {
   AnyAction,
   CombinedState,
   configureStore,
-  getDefaultMiddleware,
   Reducer,
   ReducersMapObject,
   ThunkDispatch,
@@ -10,6 +9,7 @@ import {
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
+import { scrollPositionReducers } from 'features/ScrollPosition';
 import { ReduxStoreWithManager, StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
@@ -21,6 +21,7 @@ function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    scrollPosition: scrollPositionReducers,
   };
 
   const reducerManager = createReducerManager(rootReducers);

@@ -10,10 +10,12 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollPositionSchema } from 'features/ScrollPosition';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema,
+  scrollPosition: ScrollPositionSchema,
   // Async
   loginForm?: LoginSchema,
   profile?: ProfileSchema,
