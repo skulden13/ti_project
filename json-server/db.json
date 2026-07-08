@@ -353,6 +353,294 @@
           ]
         }
       ]
+    },
+    {
+      "id": "4",
+      "userId": "1",
+      "title": "News",
+      "subtitle": "News 4",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "title": "News 5",
+      "subtitle": "News 2026",
+      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "title": "News 6",
+      "subtitle": "News 2026",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "userId": "1",
+      "title": "News 7",
+      "subtitle": "News 2026",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "title": "News 8",
+      "subtitle": "News 4",
+      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "userId": "1",
+      "title": "News 9",
+      "subtitle": "News 2026",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "userId": "1",
+      "title": "News 10",
+      "subtitle": "News 2026",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "userId": "1",
+      "title": "News 11",
+      "subtitle": "News 2026",
+      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "userId": "1",
+      "title": "News 12",
+      "subtitle": "News 4",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "userId": "1",
+      "title": "News 13",
+      "subtitle": "News 2026",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "userId": "1",
+      "title": "News 14",
+      "subtitle": "News 2026",
+      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "userId": "1",
+      "title": "News 15",
+      "subtitle": "News 2026",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "views": 101,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "A program traditionally called \"Hello, world!\" is very simple. It outputs the phrase \"Hello, world!\" or a similar one using a particular programming language.",
+            "JavaScript is a language whose programs can run in different environments. In our case, we are talking about browsers and the Node.js server platform. If you haven’t written a single line of JS code yet and are reading this text in a browser on a desktop computer, it means you are literally seconds away from your first JavaScript program.",
+            "There are also other ways to run JS code in the browser. For example, when using JavaScript in practice, programs are loaded into the browser to make web pages work. Typically, the code is written in separate files with a .js extension and then linked to web pages, but code can also be embedded directly into the page. All this is done using the <script> tag. When the browser encounters such code, it executes it. You can find more details about the script tag on w3school.com. In particular, let’s look at an example demonstrating how JavaScript interacts with a web page from that resource. This example can also be run directly there (look for the \"Try it Yourself\" button), but we will do it a bit differently. Specifically, we will create a new file in a text editor (for example, VS Code or Notepad++) called hello.html and add the following code:"
+          ]
+        }
+      ]
     }
   ],
   "comments": [
