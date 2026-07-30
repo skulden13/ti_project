@@ -7,30 +7,30 @@ import {
 import { Mods } from 'shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 
-interface SelectOption {
-  value: string;
+export interface SelectOption<T extends string = string> {
+  value: T;
   content: string;
 }
 
 type HTMLSelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>,
   'value' | 'onChange' | 'readOnly'>;
 
-interface SelectProps extends HTMLSelectProps {
+interface SelectProps<T extends string = string> extends HTMLSelectProps {
   className?: string;
   label?: string;
-  options?: SelectOption[];
-  value?: string;
-  onChange?: (value: string) => void;
+  options?: SelectOption<T>[];
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-export const Select = memo((props: SelectProps) => {
+export const SelectComponent = <T extends string = string>(props: SelectProps<T>) => {
   const {
     className, label, options, value, onChange, readonly,
   } = props;
 
   const changeHandler = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   }, [onChange]);
 
   const optionList = useMemo(() => (
@@ -60,4 +60,6 @@ export const Select = memo((props: SelectProps) => {
       </select>
     </div>
   );
-});
+};
+
+export const Select = memo(SelectComponent) as typeof SelectComponent;
