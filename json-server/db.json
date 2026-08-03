@@ -165,9 +165,9 @@
     {
       "id": "2",
       "userId": "1",
-      "title": "Go News",
-      "subtitle": "Go News",
-      "img": "https://www.nixsolutions.com/uploads/2020/07/Golang-700x395.png",
+      "title": "Science News",
+      "subtitle": "Science News",
+      "img": "https://www.oecd.org/adobe/dynamicmedia/deliver/dm-aid--81da1bba-5e45-46df-9741-33c6113a84d1/a8d820bd-en.jpg?preferwebp=true&quality=80&width=1454",
       "views": 1023,
       "createdAt": "17.09.2021",
       "type": [
@@ -383,7 +383,7 @@
       "userId": "1",
       "title": "News 5",
       "subtitle": "News 2026",
-      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "img": "https://shiftasia.com/community/content/images/size/w2000/2022/11/golang.png",
       "views": 2011,
       "createdAt": "10.10.2025",
       "type": [
@@ -407,7 +407,7 @@
       "userId": "1",
       "title": "News 6",
       "subtitle": "News 2026",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "img": "https://www.oecd.org/adobe/dynamicmedia/deliver/dm-aid--81da1bba-5e45-46df-9741-33c6113a84d1/a8d820bd-en.jpg?preferwebp=true&quality=80&width=1454",
       "views": 432,
       "createdAt": "08.03.2025",
       "type": [
@@ -455,7 +455,7 @@
       "userId": "1",
       "title": "News 8",
       "subtitle": "News 4",
-      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "img": "https://shiftasia.com/community/content/images/size/w2000/2022/11/golang.png",
       "views": 98,
       "createdAt": "26.09.2023",
       "type": [
@@ -479,7 +479,7 @@
       "userId": "1",
       "title": "News 9",
       "subtitle": "News 2026",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "img": "https://www.oecd.org/adobe/dynamicmedia/deliver/dm-aid--81da1bba-5e45-46df-9741-33c6113a84d1/a8d820bd-en.jpg?preferwebp=true&quality=80&width=1454",
       "views": 104,
       "createdAt": "26.02.2025",
       "type": [
@@ -503,7 +503,7 @@
       "userId": "1",
       "title": "News 10",
       "subtitle": "News 2026",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://www.jvbruni.com/sites/default/files/styles/article_main_image/public/images/article/econ_prin_M_shutterstock_247774624_0.jpg?itok=kq9bAqlR",
       "views": 267,
       "createdAt": "26.02.2024",
       "type": [
@@ -527,7 +527,7 @@
       "userId": "1",
       "title": "News 11",
       "subtitle": "News 2026",
-      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "img": "https://shiftasia.com/community/content/images/size/w2000/2022/11/golang.png",
       "views": 10,
       "createdAt": "09.10.2021",
       "type": [
@@ -551,7 +551,7 @@
       "userId": "1",
       "title": "News 12",
       "subtitle": "News 4",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "img": "https://www.jvbruni.com/sites/default/files/styles/article_main_image/public/images/article/econ_prin_M_shutterstock_247774624_0.jpg?itok=kq9bAqlR",
       "views": 1067,
       "createdAt": "26.02.2026",
       "type": [
@@ -599,7 +599,7 @@
       "userId": "1",
       "title": "News 14",
       "subtitle": "News 2026",
-      "img": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "img": "https://www.jvbruni.com/sites/default/files/styles/article_main_image/public/images/article/econ_prin_M_shutterstock_247774624_0.jpg?itok=kq9bAqlR",
       "views": 103,
       "createdAt": "26.02.2023",
       "type": [
@@ -623,7 +623,7 @@
       "userId": "1",
       "title": "News 15",
       "subtitle": "News 2026",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png",
+      "img": "https://www.jvbruni.com/sites/default/files/styles/article_main_image/public/images/article/econ_prin_M_shutterstock_247774624_0.jpg?itok=kq9bAqlR",
       "views": 202,
       "createdAt": "26.02.2024",
       "type": [
