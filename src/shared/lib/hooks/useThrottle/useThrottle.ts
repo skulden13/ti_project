@@ -1,15 +1,15 @@
 import { useCallback, useRef } from 'react';
 
 export function useThrottle(callback: (...args: any[]) => void, delay: number) {
-  const throttleRef = useRef(false);
+  const ref = useRef(false);
 
   return useCallback((...args: any[]) => {
-    if (!throttleRef.current) {
+    if (!ref.current) {
       callback(...args);
-      throttleRef.current = true;
+      ref.current = true;
 
       setTimeout(() => {
-        throttleRef.current = false;
+        ref.current = false;
       }, delay);
     }
   }, [callback, delay]);
