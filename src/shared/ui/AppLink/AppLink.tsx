@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib';
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
 import cls from './AppLink.module.scss';
