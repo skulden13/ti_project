@@ -5,6 +5,8 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -12,7 +14,7 @@ interface NavbarProps {
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['translation', 'article']);
   const dispatch = useDispatch();
 
   const [isAuthModal, setIsAuthModal] = useState(false);
@@ -33,9 +35,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <header className={classNames(cls.navbar, {}, className ? [className] : [])}>
         <div className={cls.links}>
+          <AppLink
+            to={RoutePaths.article_create}
+            theme={AppLinkTheme.SECONDARY}
+            className={cls.link}
+          >
+            {t('article:NewPage')}
+          </AppLink>
           <Button
             theme={ButtonTheme.CLEAR_INVERTED}
-            className={cls.links}
+            className={cls.link}
             onClick={handleLogout}
           >
             {t('LogOut')}
