@@ -1,4 +1,4 @@
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -12,20 +12,28 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
+import { Text } from 'shared/ui/Text/Text';
 import { addCommentForArticle }
   from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { articleDetailsCommentsReducer, getArticleComments }
+import { getArticleComments }
   from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId }
   from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { getArticleRecommendations }
+  from '../../model/slice/articleDetailsRecommendationsSlice';
+import { getArticleRecommendationsIsLoading }
+  from '../../model/selectors/recommendations';
+import { fetchArticleRecomendations }
+  from '../../model/services/fetchArticleRecomendations/fetchArticleRecomendations';
+import { articleDetailsPageReducer } from '../../model/slice';
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 const reducers: ReducersList = {
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
@@ -34,10 +42,13 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const comments = useSelector(getArticleComments.selectAll);
-  const isLoading = useSelector(getArticleCommentsIsLoading);
+  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
+  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
+    dispatch(fetchArticleRecomendations());
   });
 
   const sendCommentHandler = useCallback((text: string) => {
@@ -65,8 +76,17 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 
       <ArticleDetails id={id} />
 
+      <Text className={cls.title} title={t('Recommendations')} />
+      <ArticleList
+        className={cls.recommendations}
+        articles={recommendations}
+        isLoading={recommendationsIsLoading}
+        // eslint-disable-next-line i18next/no-literal-string
+        target="_blank"
+      />
+
       <CommentList
-        isLoading={isLoading}
+        isLoading={commentsIsLoading}
         comments={comments}
         onSendComment={sendCommentHandler}
       />

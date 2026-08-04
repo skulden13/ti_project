@@ -7,10 +7,10 @@ import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollPositionSchema } from 'features/ScrollPosition';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -21,7 +21,7 @@ export interface StateSchema {
   profile?: ProfileSchema,
   articlesPage?: ArticlesPageSchema,
   articleDetails?: AtricleDetailsSchema,
-  articleDetailsComments?: ArticleDetailsCommentsSchema,
+  articleDetailsPage?: ArticleDetailsPageSchema,
   addCommentForm?: AddCommentFormSchema,
 }
 

@@ -20,5 +20,6 @@
   "AtricleTypeIT": "IT",
   "AtricleTypeScience": "Science",
   "AtricleTypeEconomy": "Economy",
-  "AtricleTypeAll": "All"
+  "AtricleTypeAll": "All",
+  "Recommendations": "Recommendations"
 }
