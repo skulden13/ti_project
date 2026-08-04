@@ -1,4 +1,4 @@
-import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
+import { ArticleList, ArticleView, ArticleListFilters } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList }
@@ -8,6 +8,7 @@ import { useInitialEffect }
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/Page';
+import { useSearchParams } from 'react-router-dom';
 import { articlesPageActions, articlesPageReducer, getArticles }
   from '../../model/slice/articlesPageSlice';
 import {
@@ -32,6 +33,7 @@ const ArticlesPage = memo(() => {
   const isLoading = useSelector(getArticlePageIsLoading);
   const error = useSelector(getArticlePageError);
   const view = useSelector(getArticlePageView) || ArticleView.PLATE;
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleChangeView = useCallback(
     (v: ArticleView) => { dispatch(articlesPageActions.setView(v)); },
@@ -43,14 +45,17 @@ const ArticlesPage = memo(() => {
     [dispatch],
   );
 
-  useInitialEffect(() => { dispatch(initArticlesPage()); });
+  useInitialEffect(() => { dispatch(initArticlesPage(searchParams)); });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={loadNextHandler}>
         <header className={cls.header}>
-          <h1>{t('ArticlesPage')}</h1>
-          <ArticleViewSelector view={view} onViewClick={handleChangeView} />
+          <h1>{t('Articles')}</h1>
+          <ArticleListFilters
+            view={view}
+            onChangeView={handleChangeView}
+          />
         </header>
         <ArticleList
           articles={articles}

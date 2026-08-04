@@ -1,7 +1,9 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib';
 import { useTranslation } from 'react-i18next';
-import { TextTheme, Text, TextAlign } from 'shared/ui/Text/Text';
+import {
+  TextTheme, Text, TextAlign, TextSize,
+} from 'shared/ui/Text/Text';
 import { Article, ArticleView } from '../../model/types/article';
 
 import cls from './ArticleList.module.scss';
@@ -60,7 +62,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   return (
     <div className={classNames('', {}, [className, cls[view]])}>
-      {content}
+      {!isLoading && !articles.length
+        ? <Text title={t('ArticlesNotFound')} size={TextSize.L} />
+        : content}
     </div>
   );
 });

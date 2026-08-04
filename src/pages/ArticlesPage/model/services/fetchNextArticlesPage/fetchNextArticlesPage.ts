@@ -23,7 +23,7 @@ const fetchNextArticlesPage = createAsyncThunk<
     if (hasMore && !isLoading) {
       const nextPage = page + 1;
       dispatch(articlesPageActions.setPage(nextPage));
-      dispatch(fetchArticlesList({ page: nextPage }));
+      dispatch(fetchArticlesList({}));
     }
   },
 );
