@@ -22,12 +22,17 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales },
-      ],
-    }),
   ];
+
+  if (paths.locales && paths.buildLocales) {
+    plugins.push(
+      new CopyPlugin({
+        patterns: [
+          { from: paths.locales, to: paths.buildLocales },
+        ],
+      }),
+    );
+  }
 
   if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin());
