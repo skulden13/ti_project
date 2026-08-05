@@ -1,4 +1,3 @@
-import { BugButton } from 'app/providers/ErrorBoundary';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
@@ -9,8 +8,6 @@ const MainPage = memo(() => {
   return (
     <Page>
       <h1>{t('MainPage')}</h1>
-      <p>{t('MainPage')}</p>
-      <BugButton />
     </Page>
   );
 });
