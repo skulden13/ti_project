@@ -24,7 +24,7 @@ describe('fetchArticleById', () => {
     const thunk = new TestAsyncThunk(fetchArticleById);
     const result = await thunk.callThunk('1');
 
-    expect(mockedAxios.get).toHaveBeenCalledWith('/articles/1');
+    expect(mockedAxios.get).toHaveBeenCalledWith('/articles/1', { params: { _expand: 'user' } });
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(data);
   });
@@ -34,7 +34,7 @@ describe('fetchArticleById', () => {
     const thunk = new TestAsyncThunk(fetchArticleById);
     const result = await thunk.callThunk('1');
 
-    expect(mockedAxios.get).toHaveBeenCalledWith('/articles/1');
+    expect(mockedAxios.get).toHaveBeenCalledWith('/articles/1', { params: { _expand: 'user' } });
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toEqual('error');
   });
