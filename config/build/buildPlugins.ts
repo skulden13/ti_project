@@ -8,7 +8,7 @@ import CopyPlugin from "copy-webpack-plugin";
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
-  const plugins = [
+  const plugins: webpack.WebpackPluginInstance[] = [
     new HTMLWebpackPlugin({
       template: paths.html,
     }),
