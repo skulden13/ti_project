@@ -22,6 +22,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
+    'ulbi-tv-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -54,6 +55,7 @@ module.exports = {
     // Core hooks rules
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'ulbi-tv-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

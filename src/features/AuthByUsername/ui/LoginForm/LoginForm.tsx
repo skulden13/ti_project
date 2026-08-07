@@ -6,12 +6,12 @@ import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
-import {
-  getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername,
-} from 'features/AuthByUsername/model/selectors';
 import { DynamicModuleLoader, ReducersList }
   from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {
+  getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername,
+} from '../../model/selectors';
 import cls from './LoginForm.module.scss';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';

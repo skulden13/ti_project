@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Select, SelectOption } from 'shared/ui/Select/Select';
 import { SortOrder, SortOrderEnum } from 'shared/types';
-import { ArticleSortField } from 'entities/Article/model/types/article';
+import { ArticleSortField } from '../../model/types/article';
 import cls from './ArticleListSortSelector.module.scss';
 
 interface ArticleListSortSelectorProps {

@@ -1,7 +1,7 @@
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import AvatarImg from 'shared/assets/tests/storybook.jpeg';
-import { updateProfileData } from 'entities/Profile/services/updateProfileData/updateProfileData';
+import { updateProfileData } from '../../services/updateProfileData/updateProfileData';
 import { profileActions, profileReducer } from './profileSlice';
 import { ProfileSchema, ValidationProfileError } from '../types/profile';
 
