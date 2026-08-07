@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import { addCommentForArticle }
   from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleComments }
@@ -56,7 +57,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   }, [dispatch]);
 
   const content = !id ? t('ArticleNotFound') : (
-    <>
+    <VStack gap="16" max>
       <ArticleDetailsPageHeader />
       <ArticleDetails id={id} />
 
@@ -73,7 +74,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
         comments={comments}
         onSendComment={sendCommentHandler}
       />
-    </>
+    </VStack>
   );
 
   return (
