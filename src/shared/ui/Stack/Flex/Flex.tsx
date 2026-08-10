@@ -1,4 +1,4 @@
-import { memo, ReactNode } from 'react';
+import { HTMLAttributes, memo, ReactNode } from 'react';
 import { classNames } from 'shared/lib';
 
 import { Mods } from 'shared/lib/classNames/classNames';
@@ -8,16 +8,6 @@ export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
-
-export interface FlexProps {
-  className?: string;
-  children: ReactNode;
-  justify?: FlexJustify;
-  align?: FlexAlign;
-  direction?: FlexDirection;
-  gap?: FlexGap;
-  max?: boolean;
-}
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -44,6 +34,16 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gap32,
 };
 
+export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
+  className?: string;
+  children: ReactNode;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction?: FlexDirection;
+  gap?: FlexGap;
+  max?: boolean;
+}
+
 export const Flex = memo((props: FlexProps) => {
   const {
     className,
@@ -53,6 +53,7 @@ export const Flex = memo((props: FlexProps) => {
     direction = 'row',
     gap = '16',
     max = false,
+    ...rest
   } = props;
 
   const classes = [
@@ -68,7 +69,10 @@ export const Flex = memo((props: FlexProps) => {
   };
 
   return (
-    <div className={classNames(cls.Flex, mods, classes)}>
+    <div
+      className={classNames(cls.Flex, mods, classes)}
+      {...rest}
+    >
       {children}
     </div>
   );
