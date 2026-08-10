@@ -9,5 +9,6 @@
   "LoginPassword": "Enter Password >",
   "LoginError": "Password or username is incorrect",
   "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Decrement": "Decrement",
+  "ListboxPlaceholder": "Select value"
 }

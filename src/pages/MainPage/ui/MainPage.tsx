@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
 
 const MainPage = memo(() => {
-  const { t } = useTranslation('main');
+  const { t } = useTranslation();
 
   return (
     <Page>
-      <h1>{t('MainPage')}</h1>
+      <h1>{t('MainPage', { ns: 'main' })}</h1>
     </Page>
   );
 });

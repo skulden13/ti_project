@@ -9,5 +9,6 @@
   "LoginPassword": "Введіть пароль >",
   "LoginError": "Пароль або ім'я невірне",
   "Increment": "Інкремент",
-  "Decrement": "Декремент"
+  "Decrement": "Декремент",
+  "ListboxPlaceholder": "Виберіть значення"
 }
