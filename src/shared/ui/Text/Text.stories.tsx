@@ -71,3 +71,17 @@ SizeL.args = {
   text: 'text lorem ipsum',
   size: TextSize.L,
 };
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+  title: 'Title test',
+  text: 'text lorem ipsum',
+  size: TextSize.M,
+};
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+  title: 'Title test',
+  text: 'text lorem ipsum',
+  size: TextSize.S,
+};
