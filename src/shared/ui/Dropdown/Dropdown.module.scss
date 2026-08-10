@@ -17,18 +17,20 @@
   position: absolute;
   z-index: 10000;
   background-repeat: 8px;
+  border-radius: 12px;
   border: 1px solid var(--primary-color);
   overflow: hidden;
 }
 
 .menuItem {
+  width: 100%;
   padding: 10px 25px;
+  cursor: pointer;
+  white-space: pre;
   border: none;
   background: none;
   outline: none;
   color: var(--primary-color);
-  cursor: pointer;
-  white-space: pre;
 }
 
 .active {

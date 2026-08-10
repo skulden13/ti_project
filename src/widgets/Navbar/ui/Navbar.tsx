@@ -51,6 +51,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
               trigger={<Avatar src={authData.avatar} size={30} />}
               items={[
                 {
+                  content: t('Profile', { ns: 'profile' }),
+                  href: RoutePaths.profile + authData.id,
+                },
+                {
                   content: t('LogOut'),
                   onClick: handleLogout,
                 },
