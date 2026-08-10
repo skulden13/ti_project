@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { HStack } from 'shared/ui/Stack';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -35,20 +38,26 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <header className={classNames(cls.navbar, {}, className ? [className] : [])}>
         <div className={cls.links}>
-          <AppLink
-            to={RoutePaths.article_create}
-            theme={AppLinkTheme.SECONDARY}
-            className={cls.link}
-          >
-            {t('article:NewPage')}
-          </AppLink>
-          <Button
-            theme={ButtonTheme.CLEAR_INVERTED}
-            className={cls.link}
-            onClick={handleLogout}
-          >
-            {t('LogOut')}
-          </Button>
+          <HStack gap="16">
+            <AppLink
+              to={RoutePaths.article_create}
+              theme={AppLinkTheme.SECONDARY}
+              className={cls.link}
+            >
+              {t('article:NewPage')}
+            </AppLink>
+            <Dropdown
+              className={cls.dropdown}
+              trigger={<Avatar src={authData.avatar} size={30} />}
+              items={[
+                {
+                  content: t('LogOut'),
+                  onClick: handleLogout,
+                },
+              ]}
+              direction="bottom right"
+            />
+          </HStack>
         </div>
       </header>
     );
