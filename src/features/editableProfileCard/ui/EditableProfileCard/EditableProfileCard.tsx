@@ -10,6 +10,8 @@ import { useInitialEffect }
   from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModuleLoader, ReducersList }
   from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { VStack } from 'shared/ui/Stack';
+import { EditableProfilePageHeader } from '../..';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading }
@@ -88,24 +90,28 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      {validationErrors?.length && validationErrors.map((err) => (
-        <Text key={err} theme={TextTheme.ERROR} text={validationErrorsTranslations[err]} />
-      ))}
+      <VStack gap="16" max>
+        <EditableProfilePageHeader />
 
-      <ProfileCard
-        data={formData}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeFirstname={changeFirstnameHandler}
-        onChangeLastname={changeLastnameHandler}
-        onChangeAge={changeAgeHandler}
-        onChangeCurrency={changeCurrencyHandler}
-        onChangeCountry={changeCountryHandler}
-        onChangeCity={changeCityHandler}
-        onChangeUsername={changeUsernameHandler}
-        onChangeAvatar={changeAvatarHandler}
-      />
+        {validationErrors?.length && validationErrors.map((err) => (
+          <Text key={err} theme={TextTheme.ERROR} text={validationErrorsTranslations[err]} />
+        ))}
+
+        <ProfileCard
+          data={formData}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeFirstname={changeFirstnameHandler}
+          onChangeLastname={changeLastnameHandler}
+          onChangeAge={changeAgeHandler}
+          onChangeCurrency={changeCurrencyHandler}
+          onChangeCountry={changeCountryHandler}
+          onChangeCity={changeCityHandler}
+          onChangeUsername={changeUsernameHandler}
+          onChangeAvatar={changeAvatarHandler}
+        />
+      </VStack>
     </DynamicModuleLoader>
   );
 });

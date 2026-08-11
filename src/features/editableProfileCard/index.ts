@@ -17,10 +17,16 @@ import {
   EditableProfileCardSchema,
   ValidationProfileError,
 } from './model/types/editableProfileCardSchema';
+import { EditableProfilePageHeader }
+  from './ui/EditableProfilePageHeader/EditableProfilePageHeader';
 
 export { editableProfileCardActions, editableProfileCardReducer };
 export { fetchProfileData };
 export {
+  EditableProfileCard,
+  EditableProfilePageHeader,
+  EditableProfileCardSchema,
+  ValidationProfileError,
   getProfileData,
   getProfileError,
   getProfileIsLoading,
@@ -28,7 +34,4 @@ export {
   getProfileValidationErrors,
   getProfileForm,
   updateProfileData,
-  EditableProfileCard,
-  EditableProfileCardSchema,
-  ValidationProfileError,
 };
