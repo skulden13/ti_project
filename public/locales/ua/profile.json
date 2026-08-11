@@ -12,6 +12,7 @@
   "City": "Місто",
   "Username": "Ім'я користувача",
   "Avatar": "Аватар",
+  "ProfileNotFound": "Профіль не знайдено",
   "ProfileErrorTitle": "Помилка при завантаженні даних профілю",
   "ProfileErrorText": "Спробуйте оновити сторінку",
   "ProfileValidationIncorrectUserData": "Ім'я або прізвище не задане",

@@ -1,9 +1,15 @@
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import AvatarImg from 'shared/assets/tests/storybook.jpeg';
-import { updateProfileData } from '../../services/updateProfileData/updateProfileData';
-import { profileActions, profileReducer } from './profileSlice';
-import { ProfileSchema, ValidationProfileError } from '../types/profile';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import {
+  editableProfileCardActions,
+  editableProfileCardReducer,
+} from './editableProfileCardSlice';
+import {
+  EditableProfileCardSchema,
+  ValidationProfileError,
+} from '../types/editableProfileCardSchema';
 
 const data = {
   id: '1',
@@ -19,23 +25,23 @@ const data = {
 
 describe('profileSlice', () => {
   test('test set readonly', () => {
-    const state: DeepPartial<ProfileSchema> = { readonly: true };
+    const state: DeepPartial<EditableProfileCardSchema> = { readonly: true };
 
-    expect(profileReducer(
-      state as ProfileSchema,
-      profileActions.setReadonly(false),
+    expect(editableProfileCardReducer(
+      state as EditableProfileCardSchema,
+      editableProfileCardActions.setReadonly(false),
     )).toEqual({ readonly: false });
   });
 
   test('test cancel edit', () => {
-    const state: DeepPartial<ProfileSchema> = {
+    const state: DeepPartial<EditableProfileCardSchema> = {
       data,
       form: { username: '' },
     };
 
-    expect(profileReducer(
-      state as ProfileSchema,
-      profileActions.cancelEdit(),
+    expect(editableProfileCardReducer(
+      state as EditableProfileCardSchema,
+      editableProfileCardActions.cancelEdit(),
     )).toEqual({
       data,
       form: data,
@@ -47,14 +53,14 @@ describe('profileSlice', () => {
 
   test('test update profile', () => {
     const username = 'new_test_name';
-    const state: DeepPartial<ProfileSchema> = {
+    const state: DeepPartial<EditableProfileCardSchema> = {
       data,
       form: { ...data },
     };
 
-    expect(profileReducer(
-      state as ProfileSchema,
-      profileActions.updateProfile({ username }),
+    expect(editableProfileCardReducer(
+      state as EditableProfileCardSchema,
+      editableProfileCardActions.updateProfile({ username }),
     )).toEqual({
       data,
       form: { ...data, username },
@@ -63,13 +69,13 @@ describe('profileSlice', () => {
 
   // async
   test('test update profile service pending', () => {
-    const state: DeepPartial<ProfileSchema> = {
+    const state: DeepPartial<EditableProfileCardSchema> = {
       isLoading: false,
       validationErrors: [ValidationProfileError.SERVER_ERROR],
     };
 
-    expect(profileReducer(
-      state as ProfileSchema,
+    expect(editableProfileCardReducer(
+      state as EditableProfileCardSchema,
       updateProfileData.pending,
     )).toEqual({
       isLoading: true,
@@ -78,12 +84,12 @@ describe('profileSlice', () => {
   });
 
   test('test update profile service rejected', () => {
-    const state: DeepPartial<ProfileSchema> = {
+    const state: DeepPartial<EditableProfileCardSchema> = {
       isLoading: true,
     };
 
-    expect(profileReducer(
-      state as ProfileSchema,
+    expect(editableProfileCardReducer(
+      state as EditableProfileCardSchema,
       updateProfileData.rejected(
         null,
         '',
@@ -97,12 +103,12 @@ describe('profileSlice', () => {
   });
 
   test('test update profile service fullfiled', () => {
-    const state: DeepPartial<ProfileSchema> = {
+    const state: DeepPartial<EditableProfileCardSchema> = {
       isLoading: true,
     };
 
-    expect(profileReducer(
-      state as ProfileSchema,
+    expect(editableProfileCardReducer(
+      state as EditableProfileCardSchema,
       updateProfileData.fulfilled(data, ''),
     )).toEqual({
       isLoading: false,

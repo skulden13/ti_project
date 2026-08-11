@@ -4,12 +4,12 @@ import {
 import { AxiosInstance } from 'axios';
 import { AtricleDetailsSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
-import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollPositionSchema } from 'features/ScrollPosition';
+import { EditableProfileCardSchema } from 'features/editableProfileCard';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
 import { rtkApi } from 'shared/api/rtkApi';
 
@@ -20,7 +20,7 @@ export interface StateSchema {
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
   // Async
   loginForm?: LoginSchema,
-  profile?: ProfileSchema,
+  profile?: EditableProfileCardSchema,
   articlesPage?: ArticlesPageSchema,
   articleDetails?: AtricleDetailsSchema,
   articleDetailsPage?: ArticleDetailsPageSchema,

@@ -12,6 +12,7 @@
   "City": "City",
   "Username": "Username",
   "Avatar": "Avatar",
+  "ProfileNotFound": "Profile was not found",
   "ProfileErrorTitle": "Some error happened during loading profile info",
   "ProfileErrorText": "Refresh the page",
   "ProfileValidationIncorrectUserData": "First name and last name are required",

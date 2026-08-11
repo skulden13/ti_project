@@ -1,27 +1,26 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Profile, ProfileSchema } from '../types/profile';
-import { fetchProfileData } from '../../services/fetchProfileData/fetchProfileData';
-import { updateProfileData } from '../../services/updateProfileData/updateProfileData';
+import { Profile } from 'entities/Profile';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { EditableProfileCardSchema } from '../types/editableProfileCardSchema';
 
-const initialState: ProfileSchema = {
+const initialState: EditableProfileCardSchema = {
   readonly: true,
   isLoading: false,
-  error: undefined,
-  data: undefined,
 };
 
-export const profileSlice = createSlice({
-  name: 'profile',
+export const editableProfileCardSlice = createSlice({
+  name: 'editableProfileCard',
   initialState,
   reducers: {
-    setReadonly: (state, action: PayloadAction<boolean>) => { state.readonly = action.payload; },
+    setReadonly: (state, action: PayloadAction<boolean>) => {
+      state.readonly = action.payload;
+    },
     cancelEdit: (state) => {
       state.readonly = true;
       state.error = undefined;
       state.validationErrors = undefined;
-      state.form = {
-        ...state.data,
-      };
+      state.form = { ...state.data };
     },
     updateProfile: (state, action: PayloadAction<Profile>) => {
       state.form = {
@@ -32,7 +31,6 @@ export const profileSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // fetch
       .addCase(fetchProfileData.pending, (state) => {
         state.error = undefined;
         state.validationErrors = undefined;
@@ -47,7 +45,6 @@ export const profileSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-      // update
       .addCase(updateProfileData.pending, (state) => {
         state.error = undefined;
         state.validationErrors = undefined;
@@ -67,5 +64,5 @@ export const profileSlice = createSlice({
   },
 });
 
-export const { actions: profileActions } = profileSlice;
-export const { reducer: profileReducer } = profileSlice;
+export const { actions: editableProfileCardActions } = editableProfileCardSlice;
+export const { reducer: editableProfileCardReducer } = editableProfileCardSlice;

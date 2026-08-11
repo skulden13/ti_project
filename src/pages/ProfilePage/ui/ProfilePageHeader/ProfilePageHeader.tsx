@@ -4,8 +4,11 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 
 import {
-  getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'entities/Profile';
+  editableProfileCardActions,
+  getProfileData,
+  getProfileReadonly,
+  updateProfileData,
+} from 'features/editableProfileCard';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
@@ -25,10 +28,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
   const dispatch = useAppDispatch();
   const editHandler = useCallback(() => {
-    dispatch(profileActions.setReadonly(false));
+    dispatch(editableProfileCardActions.setReadonly(false));
   }, [dispatch]);
   const cancelHandler = useCallback(() => {
-    dispatch(profileActions.cancelEdit());
+    dispatch(editableProfileCardActions.cancelEdit());
   }, [dispatch]);
   const saveHandler = useCallback(() => {
     dispatch(updateProfileData());
