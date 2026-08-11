@@ -11,11 +11,13 @@ import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollPositionSchema } from 'features/ScrollPosition';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema,
   scrollPosition: ScrollPositionSchema,
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
   // Async
   loginForm?: LoginSchema,
   profile?: ProfileSchema,
