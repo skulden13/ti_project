@@ -30,6 +30,14 @@ module.exports = {
     '\\.module\\.s?css$': 'identity-obj-proxy',
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+    }],
+  ],
   testEnvironment: 'jsdom',
   testMatch: [
     '<rootDir>src/**/?(*.)+(spec|test).[tj]s?(x)',
