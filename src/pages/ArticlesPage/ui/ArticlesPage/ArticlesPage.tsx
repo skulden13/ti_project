@@ -9,7 +9,7 @@ import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import { articlesPageActions, articlesPageReducer, getArticles }
+import { articlesPageActions, articlesPageReducer }
   from '../../model/slice/articlesPageSlice';
 import {
   getArticlePageView,

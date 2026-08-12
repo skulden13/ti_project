@@ -1,9 +1,7 @@
 import { memo } from 'react';
 import { Page } from 'widgets/Page/Page';
-import { VStack } from 'shared/ui/Stack';
 import {
   EditableProfileCard,
-  EditableProfilePageHeader,
 } from 'features/editableProfileCard';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
