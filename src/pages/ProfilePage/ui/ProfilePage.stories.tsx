@@ -11,11 +11,18 @@ import ProfilePage from './ProfilePage';
 export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,
+  parameters: {
+    router: {
+      route: '/profile/1',
+      path: '/profile/:id',
+    },
+  },
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
 
 const profileData = {
+  id: '1',
   firstname: 'First',
   lastname: 'Last',
   age: 22,
@@ -28,6 +35,7 @@ const profileData = {
 
 const profileState = {
   profile: {
+    data: profileData,
     form: profileData,
     isLoading: false,
     error: undefined,
