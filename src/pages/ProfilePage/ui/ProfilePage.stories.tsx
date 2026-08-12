@@ -28,7 +28,6 @@ const profileData = {
 
 const profileState = {
   profile: {
-    // data: profileData,
     form: profileData,
     isLoading: false,
     error: undefined,
