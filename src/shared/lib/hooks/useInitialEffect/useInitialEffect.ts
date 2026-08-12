@@ -3,7 +3,9 @@ import { ProjectTypeEnum } from 'shared/types/project';
 
 export function useInitialEffect(callback: () => void) {
   return useEffect(() => {
-    if (__PROJECT__ !== ProjectTypeEnum.STORYBOOK) {
+    if (
+      __PROJECT__ !== ProjectTypeEnum.STORYBOOK
+      && __PROJECT__ !== ProjectTypeEnum.JEST) {
       callback();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
