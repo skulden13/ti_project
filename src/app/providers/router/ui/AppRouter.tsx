@@ -8,7 +8,9 @@ const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRouteProps) => (
     <Route
       key={route.path}
-      element={route.authOnly ? <RequireAuth>{route.element}</RequireAuth> : route.element}
+      element={route.authOnly
+        ? <RequireAuth roles={route.roles}>{route.element}</RequireAuth>
+        : route.element}
       path={route.path}
     />
   ), []);
