@@ -35,7 +35,6 @@ module.exports = {
     ['jest-html-reporters', {
       publicPath: '<rootDir>/reports/unit',
       filename: 'report.html',
-      openReport: true,
     }],
   ],
   testEnvironment: 'jsdom',

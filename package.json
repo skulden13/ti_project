@@ -19,6 +19,7 @@
     "ts": "npx tsc --noEmit",
     "lint:fix": "npm run lint:ts:fix && npm run lint:css:fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit:report": "JEST_HTML_REPORTERS_OPEN_REPORT=true jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook --ci",
     "storybook:build": "storybook build -c ./config/storybook",
     "test": "npm run test:unit && npm run test:ui",
