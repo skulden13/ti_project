@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { CommentList } from 'entities/Comment';
+import { VStack } from 'shared/ui/Stack';
 import { addCommentForArticle }
   from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleComments }
@@ -34,12 +35,12 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   });
 
   return (
-    <div className={classNames('', {}, [className])}>
+    <VStack gap="16" max className={classNames('', {}, [className])}>
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}
         onSendComment={sendCommentHandler}
       />
-    </div>
+    </VStack>
   );
 });
